@@ -93,11 +93,19 @@ img {
             id: $('#test_product_id').val()
           },
         dataType: 'json', 
-         success: function (data) { 
-          console.log(data);
-         } 
+        success: addToCartOk,
+        error: addToCartFail
     });
 });
+
+  function addToCartOk(product) {
+            cartCount++;
+            $('.modal')
+                .html('<span class="close" id="close">✕</span>' + product.title + ' was added to the cart!');
+            $('#cart-number')
+                .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
+            openModal();
+        }
 </script>
 
 {% schema %}
