@@ -84,8 +84,9 @@ img {
     var id = $('input').attr('name', 'product_id');
     $.ajax
     ({ 
-        url: 'cart/add.js',
-        data: "id",
+        url: '/cart/add.js',
+        data: {id:'id'},
+        datatype: 'json',
         type: 'post',
         success: function()
         {
