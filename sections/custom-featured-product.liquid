@@ -105,12 +105,12 @@
       dataType: 'json',
       success: function() { 
         document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-          bubbles: true  //this code is for prestige theme, is to refresh the cart
+          bubbles: true  
        }));
       }
     });
     document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-    	bubbles: true    // same code for prestige theme   
+    	bubbles: true     
  	 }));
   }
 </script>
