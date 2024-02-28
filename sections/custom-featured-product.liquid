@@ -49,13 +49,21 @@
             <h3>Rs. {{ section.settings.product.price }}</h3>
           {% endif %}
           <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
-          {% if current_variant.available %}
-          <div id="add-to-cart-form">
-            <form action="/cart/add" method="post" enctype="multipart/form-data" onSubmit="Shopify.AjaxCart.toggle()">
-              {% include 'add-to-cart-form' %}
-            </form>
-          </div>
-        {% endif %}
+          <form method="post" action="/cart/add" id="add-to-cart-form">
+            <input type="hidden" name="id" value="{{ section.settings.product.id }}" />
+            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+            <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
+            <!--cart-->
+            <div class="header__cart">
+
+                <a class="js-ajax-cart-drawer-trigger" href="/cart">
+                    {% include 'icon-cart' %}
+                    <span class="js-ajax-cart-counter">{{ cart.item_count }}</span>
+                </a>
+
+            </div>
+            <!--end cart-->
+          </form>
         </div>
       </div>
     </div>
@@ -84,8 +92,32 @@
 {% endif %}
 
 <script>
-          timber.RightDrawer.open();
-  console.log("working ");
+       jQuery('body').on('click','#AddToCart', function(evt, cart) {
+
+  timber.RightDrawer.open();
+
+       var myVar = setInterval(function(){ 
+        timber.RightDrawer.close();
+        clearInterval(myVar);
+        }, 5000);
+});
+
+  $('#add-to-cart-form').on('submit', function(event) {
+    prevent.default();
+    comsole.log("worked");
+  $.ajax({
+    type: 'POST',
+    url: '/cart/add.js',
+    data: $(this).serialize(),
+    dataType: 'json',
+    success: function() {
+      console.log("working!");
+    },
+    error: function() {
+      // Do something on error (e.g. show an error message)
+    }
+  });
+});
 </script>
 {% schema %}
   {
