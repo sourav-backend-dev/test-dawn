@@ -83,6 +83,7 @@
 
 <script>
   $('#add-to-cart-form').on('submit', function(event) {
+    prevent.default();
     comsole.log("worked");
   $.ajax({
     type: 'POST',
