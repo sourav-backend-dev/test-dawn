@@ -85,10 +85,7 @@
 
 <script>
   $(document).on("click",".product__add-to-cart-button",function() {
-          setTimeout(function() { 
-            $('.cart_btn').click();
-            console.log("work");
-          }, 1000);
+          setTimeout(function(){ $('.ajax-cart__toggle').click() }, 1500);
       });
 </script>
 
