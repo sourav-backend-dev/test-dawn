@@ -76,8 +76,24 @@ img {
         </div>
     </div>
 </section>
-
 {% endif %}
+
+<script>
+  $('#btn-cart').click(function() 
+{
+    var id = $('input').attr('name', 'product_id');
+    $.ajax
+    ({ 
+        url: 'cart/add.js',
+        data: "id",
+        type: 'get',
+        success: function()
+        {
+            console.log("woked! ");
+        }
+    });
+});
+</script>
 
 {% schema %}
   {
