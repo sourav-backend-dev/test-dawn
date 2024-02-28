@@ -37,6 +37,34 @@ img {
     margin: 1rem 0;
 }
 
+  .modal {
+            max-width: 575px;
+            background: white;
+            border: 5px solid #111;
+            padding: 50px 65px;
+            position: fixed;
+            z-index: 1000;
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .modal--overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .hidden {
+            display: none;
+        }
+  
 </style>
 
 {% if section.settings.product != blank  %}
@@ -78,6 +106,9 @@ img {
     </div>
 </section>
 {% endif %}
+
+<div class="modal hidden" id="download-modal"></div>
+<div class="modal--overlay hidden"></div>
 
 <script>
   $('#btn-cart').click(function() 
