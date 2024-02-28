@@ -82,10 +82,11 @@ img {
   $('#btn-cart').click(function() 
 {
     var id = $('input').attr('name', 'product_id');
+  console.log(id);
     $.ajax
     ({ 
         url: '/cart/add.js',
-        data: {id:'id'},
+        data: {id:id},
         datatype: 'json',
         type: 'post',
         success: function()
