@@ -57,6 +57,7 @@
                 </button>
             </div>
             <!--end cart-->
+          <a id="add-to-cart-button">Add to Ajax Cart </a>
         </div>
       </div>
     </div>
@@ -83,9 +84,35 @@
 {% endif %}
 
 <script>
-  $(document).on("click",".product__add-to-cart-button",function() {
-          setTimeout(function(){ $('.cart_btn ').trigger('click'); }, 1500);
-      });
+  // $(document).on("click",".product__add-to-cart-button",function() {
+  //         setTimeout(function(){ $('.cart_btn ').trigger('click'); }, 1500);
+  //     });
+
+  $('#add-to-cart-button').click(function(){    
+    addItemToCart( 1709037562, 1, "1", "Months").    // paste your id product number
+  });
+
+  function addItemToCart(variant_id, qty, frequency, unit_type) {
+    data = {
+      "id": variant_id,
+      "quantity": qty
+    }
+    
+    jQuery.ajax({
+      type: 'POST',
+      url: '/cart/add.js',
+      data: data,
+      dataType: 'json',
+      success: function() { 
+        document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
+          bubbles: true  //this code is for prestige theme, is to refresh the cart
+       }));
+      }
+    });
+    document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
+    	bubbles: true    // same code for prestige theme   
+ 	 }));
+  }
 </script>
 
 
