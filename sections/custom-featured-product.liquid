@@ -1,79 +1,78 @@
 <style>
   h1,
-h2,
-h3,
-h4 {
+  h2,
+  h3,
+  h4 {
     line-height: 1.3;
-}
+  }
 
-a {
+  a {
     color: var(--secondary-color);
     text-decoration: none;
-}
+  }
 
-img {
+  img {
     width: 100%;
-}
+  }
 
-.container {
+  .container {
     max-width: 1100px;
     margin: auto;
     overflow: hidden;
     padding: 2rem;
-}
+  }
 
-.section-a {
+  .section-a {
     margin: 2rem 0;
-}
+  }
 
 
-
-.section-a h1 {
+  .section-a h1 {
     font-size: 4rem;
     color: var(--primary-color);
-}
+  }
 
-.section-a p {
+  .section-a p {
     margin: 1rem 0;
-}
+  }
 
 </style>
-{% if section.settings.product != blank  %}
+{% if section.settings.product != blank %}
 
-<section class="section-a">
+  <section class="section-a">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '2048x' | img_tag }}</div>
-            <div class="col-md-5">
-                <h1>{{ section.settings.product }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.product.price }}</h3>
-              {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
-                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">shriya</button>
-            </div>
+      <div class="row">
+        <div class="col-md-7">{{ section.settings.product.images.first | img_url: '2048x' | img_tag }}</div>
+        <div class="col-md-5">
+          <h1>{{ section.settings.product }}</h1>
+          {% if section.settings.price %}
+            <h3>Rs. {{ section.settings.product.price }}</h3>
+          {% endif %}
+          <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
+          <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">shrfghsfsfiya</button>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
 {% else %}
   <section class="section-a">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-              {{ section.settings.image_2 | img_url: '2048x' | img_tag }}
-            </div>
-            <div class="col-md-5">
-                <h1>{{ section.settings.heading_2 }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.price }}</h3>
-              {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
-                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
-            </div>
+      <div class="row">
+        <div class="col-md-7">
+          {{ section.settings.image_2 | img_url: '2048x' | img_tag }}
         </div>
+        <div class="col-md-5">
+          <h1>{{ section.settings.heading_2 }}</h1>
+          {% if section.settings.price %}
+            <h3>Rs. {{ section.settings.price }}</h3>
+          {% endif %}
+          <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
+          <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
 {% endif %}
 
@@ -82,61 +81,58 @@ img {
     "name": "cust-feat-product",
     "settings": [
       {
-      "type": "product",
-      "id": "product",
-      "label": "Select Product"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "choose image"
-    },
-    {
-      "type": "number",
-      "id": "price",
-      "label": "product price"
-    },
-    {
-      "type": "text",
-      "id": "desc",
-      "default": "Description",
-      "label": "description",
-      "info": "Description"
-    },{
-      "type": "select",
-      "id": "alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "left"
-        },
-        {
-          "value": "center",
-          "label": "center"
-        },{
-          "value": "justify",
-          "label": "justify"
-        },
-        {
-          "value": "right",
-          "label": "right"
-        }
-      ],
-      "default": "justify",
-      "label": "Description Alignment"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading_2",
-      "default": "Heading",
-      "label": "heading",
-      "info": "Heading"
-    }
+        "type": "product",
+        "id": "product",
+        "label": "Select Product"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "choose image"
+      },
+      {
+        "type": "number",
+        "id": "price",
+        "label": "product price"
+      },
+      {
+        "type": "text",
+        "id": "desc",
+        "default": "Description",
+        "label": "description",
+        "info": "Description"
+      }, {
+        "type": "select",
+        "id": "alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          }, {
+            "value": "center",
+            "label": "center"
+          }, {
+            "value": "justify",
+            "label": "justify"
+          }, {
+            "value": "right",
+            "label": "right"
+          }
+        ],
+        "default": "justify",
+        "label": "Description Alignment"
+      }, {
+        "type": "inline_richtext",
+        "id": "heading_2",
+        "default": "Heading",
+        "label": "heading",
+        "info": "Heading"
+      }
     ],
     "presets": [
-    {
-      "name": "cust-feat-product"
-    }
-  ]
+      {
+        "name": "cust-feat-product"
+      }
+    ]
   }
 {% endschema %}
