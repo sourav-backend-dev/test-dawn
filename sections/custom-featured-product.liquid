@@ -97,20 +97,6 @@ img {
         error: addToCartFail
     });
 });
-
-  function addToCartOk(product) {
-            cartCount++;
-            $('.modal')
-                .html('<span class="close" id="close">✕</span>' + product.title + ' was added to the cart!');
-            $('#cart-number')
-                .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
-            openModal();
-        }
-  function addToCartFail(obj, status) {
-            $('.modal')
-                .html('<span class="close" id="close">✕</span> The product you are trying to add is out of stock.');
-            openModal();
-        }
 </script>
 
 {% schema %}
