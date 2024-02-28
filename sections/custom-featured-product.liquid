@@ -108,7 +108,7 @@ img {
                               $("cart-drawer.is-empty .drawer__footer").css("display", "block");
                               $("cart-drawer.is-empty .cart__contents").css("display", "block");
                               $("cart-drawer.drawer").removeClass('is-empty');
-                              const productTitle = '<div class="ajax-cart-item__title">' + item.title + '</div>';
+                              $('cart-drawer').append('<div class="ajax-cart-item__title">' + item.title + '</div>');
                               const productImage = '<img class="ajax-cart-item__image" src="' + item.image + '" >';
                               const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
                               const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
