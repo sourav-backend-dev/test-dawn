@@ -52,7 +52,7 @@
           <form method="post" action="/cart/add" id="add-to-cart-form">
             <input type="hidden" name="id" value="{{ section.settings.product.id }}" />
             <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-            <input type="submit" id="add-to-cart-form" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
+            <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
           </form>
         </div>
       </div>
@@ -83,14 +83,14 @@
 
 <script>
   $('#add-to-cart-form').on('submit', function(event) {
-  event.preventDefault(); // prevent default form submission
+    comsole.log("worked");
   $.ajax({
     type: 'POST',
     url: '/cart/add.js',
     data: $(this).serialize(),
     dataType: 'json',
     success: function() {
-      // Do something on success (e.g. show a success message)
+      console.log("working!");
     },
     error: function() {
       // Do something on error (e.g. show an error message)
