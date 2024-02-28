@@ -104,6 +104,45 @@ img {
          } 
     });
 });
+
+  $( document ).ready(function() {
+
+  
+Shopify.addToCart = function(items) {
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(items)
+  })
+  .then(response => {
+    return response.json();
+    console.log("product successfully added to cart");
+  
+  }).then((state) => {
+
+    console.log("Current State: " + state)
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+};
+  $( ".upsell_atcButton" ).on( "click", function() {
+console.log("Clicked")
+      let upsellProductId = $(this).data("variant-id");
+      console.log("Variant ID: " + upsellProductId);
+      let products = {
+       'items': [{
+          'id': upsellProductId,
+          'quantity': 1
+        }]
+      };
+    console.log("Products: " + products)
+    Shopify.addToCart(products);
+  });
+  
+});
 </script>
 
 {% schema %}
