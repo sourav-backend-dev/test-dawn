@@ -82,22 +82,16 @@
 {% endif %}
 
 <script>
-  $('#add-to-cart-form').on('submit', function(event) {
-    prevent.default();
-    comsole.log("worked");
-  $.ajax({
-    type: 'POST',
-    url: '/cart/add.js',
-    data: $(this).serialize(),
-    dataType: 'json',
-    success: function() {
-      console.log("working!");
-    },
-    error: function() {
-      // Do something on error (e.g. show an error message)
-    }
-  });
+       jQuery('body').on('submit','##add-to-cart-form', function(evt, cart) {
+
+  timber.RightDrawer.open();
+
+       var myVar = setInterval(function(){ 
+        timber.RightDrawer.close();
+        clearInterval(myVar);
+        }, 5000);
 });
+
 </script>
 {% schema %}
   {
