@@ -63,7 +63,6 @@
   </section>
 
 {% else %}
-  
   <section class="section-a">
     <div class="container">
       <div class="row">
@@ -81,7 +80,6 @@
       </div>
     </div>
 </section>
-
 {% endif %}
 
 
@@ -89,10 +87,13 @@
         $(document).ready(function() {
           // Open cart drawer after add to cart button is clicked
           $('.product__add-to-cart-button').one('click', function(){
-            setTimeout(function(){ $('.site-header__cart ').click() }, 1500);
+            setTimeout(function(){ $('.header__cart ').click() }, 1500);
           });
         });
 </script>
+
+
+
 {% schema %}
   {
     "name": "cust-feat-product",
