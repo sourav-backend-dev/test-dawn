@@ -49,21 +49,14 @@
             <h3>Rs. {{ section.settings.product.price }}</h3>
           {% endif %}
           <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
-          <form method="post" action="/cart/add" id="add-to-cart-form">
-            <input type="hidden" name="id" value="{{ section.settings.product.id }}" />
-            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-            <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
             <!--cart-->
             <div class="header__cart">
-
                 <a class="js-ajax-cart-drawer-trigger btn btn-success" href="/cart">
                     ADD TO CART
-                    <span class="js-ajax-cart-counter">{{ cart.item_count }}</span>
+                    <span class="js-ajax-cart-counter"> {{ cart.item_count }} items</span>
                 </a>
-
             </div>
             <!--end cart-->
-          </form>
         </div>
       </div>
     </div>
