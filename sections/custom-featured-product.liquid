@@ -87,13 +87,18 @@ img {
   console.log(id);
     $.ajax
     ({ 
-        url: '/cart/add.js',
-        data: {id:'id'},
-        datatype: 'json',
-        type: 'post',
-        success: function(result){
-          console.log(result);
-        }
+        type: 'POST',
+    url: '/cart/add.js',
+    data: 'quantity=' + quantity + '&id=' + variant_id,
+    dataType: 'json',
+    success: function(line_item) { 
+      if ((typeof callback) === 'function') {
+        callback(line_item);
+      }
+      else {
+        Shopify.onItemAdded(line_item);
+      }
+    }
     });
 });
 </script>
