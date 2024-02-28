@@ -102,7 +102,20 @@ img {
                 type: 'GET',
                 dataType: 'html',
                 success:function(carthtml) {
-                  $('cart-drawer').html($(data).find('cart-drawer').html());
+                  // $('cart-drawer').html($(data).find('cart-drawer').html());
+                  if($("cart-drawer.drawer").hasClass('is-empty')){
+                              $('cart-drawer').html($(carthtml).find('cart-drawer').html());
+                              $("cart-drawer.is-empty .drawer__header").css("display", "block");
+                              $("cart-drawer.is-empty .drawer__footer").css("display", "block");
+                              $("cart-drawer.is-empty .cart__contents").css("display", "block");
+                              $("cart-drawer.drawer").removeClass('is-empty');
+                              $("#CartDrawer-Overlay").click(function(){
+                                 $("cart-drawer.drawer").removeClass('active');
+                              });
+                          } else {
+                             //$('cart-drawer-items').html($(carthtml).find('cart-drawer-items').html());
+                             $("cart-drawer").html($(carthtml).find('cart-drawer').html());
+                          }
                 }
               });
          } 
