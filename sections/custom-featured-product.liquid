@@ -51,7 +51,7 @@
           <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
             <!--cart-->
             <div class="header__cart">
-                <a class="js-ajax-cart-drawer-trigger btn btn-success" href="/cart">
+                <a class="js-ajax-cart-drawer-trigger btn btn-success product__add-to-cart-button" href="/cart">
                     ADD TO CART
                     <span class="js-ajax-cart-counter"> {{ cart.item_count }} items</span>
                 </a>
@@ -86,32 +86,12 @@
 
 
 <script>
-       jQuery('body').on('click','#AddToCart', function(evt, cart) {
-
-  timber.RightDrawer.open();
-
-       var myVar = setInterval(function(){ 
-        timber.RightDrawer.close();
-        clearInterval(myVar);
-        }, 5000);
-});
-
-  $('#add-to-cart-form').on('submit', function(event) {
-    prevent.default();
-    comsole.log("worked");
-  $.ajax({
-    type: 'POST',
-    url: '/cart/add.js',
-    data: $(this).serialize(),
-    dataType: 'json',
-    success: function() {
-      console.log("working!");
-    },
-    error: function() {
-      // Do something on error (e.g. show an error message)
-    }
-  });
-});
+        $(document).ready(function() {
+          // Open cart drawer after add to cart button is clicked
+          $('.product__add-to-cart-button').one('click', function(){
+            setTimeout(function(){ $('.site-header__cart ').click() }, 1500);
+          });
+        });
 </script>
 {% schema %}
   {
