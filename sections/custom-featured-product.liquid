@@ -102,8 +102,7 @@ img {
                 type: 'GET',
                 dataType: 'html',
                 success:function(carthtml) {
-                  console.log(carthtml);
-                  $('cart-drawer').html($(carthtml).find('cart-drawer').html());
+                  $('cart-drawer').html($(data).find('cart-drawer').html());
                 }
               });
          } 
