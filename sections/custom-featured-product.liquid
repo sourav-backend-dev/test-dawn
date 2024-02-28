@@ -93,8 +93,9 @@ img {
             id: $('#test_product_id').val()
           },
         dataType: 'json', 
-        success: addToCartOk,
-        error: addToCartFail
+         success: function (data) { 
+          console.log(data);
+         } 
     });
 });
 </script>
