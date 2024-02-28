@@ -102,6 +102,7 @@ img {
                 type: 'GET',
                 dataType: 'html',
                 success:function(carthtml) {
+                  console.log(item.price);
                   if($("cart-drawer.drawer").hasClass('is-empty')){
                               $('cart-drawer').html($(carthtml).find('cart-drawer').html());
                               $("cart-drawer.is-empty .drawer__header").css("display", "block");
