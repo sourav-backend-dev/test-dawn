@@ -84,12 +84,12 @@
 
 
 <script>
-        $(document).ready(function() {
-          $('.product__add-to-cart-button').on('click', function(){
-            $('.header__icon--cart').click()
+  $(document).on("click",".product__add-to-cart-button",function() {
+          setTimeout(function() { 
+            $('.header__icon--cart').click();
             console.log("work");
-          });
-        });
+          }, 1000);
+      });
 </script>
 
 
