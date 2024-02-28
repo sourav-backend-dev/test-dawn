@@ -49,11 +49,13 @@
             <h3>Rs. {{ section.settings.product.price }}</h3>
           {% endif %}
           <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
-          <form method="post" id="add-to-cart-form">
-            <input type="hidden" name="id" value="{{ section.settings.product.id }}" />
-            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-            <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
-          </form>
+          {% if current_variant.available %}
+          <div id="add-to-cart-form">
+            <form action="/cart/add" method="post" enctype="multipart/form-data" onSubmit="Shopify.AjaxCart.toggle()">
+              {% include 'add-to-cart-form' %}
+            </form>
+          </div>
+        {% endif %}
         </div>
       </div>
     </div>
