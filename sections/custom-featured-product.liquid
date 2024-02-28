@@ -50,8 +50,8 @@
           {% endif %}
           <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
           <form method="post" action="/cart/add" id="add-to-cart-form">
-            <input type="number" name="id" value="{{ section.settings.product.first.id }}" />
-            <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+            <input type="number" name="id" value="{{ section.settings.product.id }}" />
+            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
             <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
           </form>
         </div>
@@ -80,6 +80,7 @@
 </section>
 
 {% endif %}
+<p>gfthrthtr tyr yhtr yrrtyh rt</p>
 {% schema %}
   {
     "name": "cust-feat-product",
