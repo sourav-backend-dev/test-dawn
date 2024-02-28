@@ -51,7 +51,7 @@ img {
                 <h3>Rs. {{ section.settings.product.price }}</h3>
               {% endif %}
               <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
-              <input type="number" value="{{ product.id }}" name="product_id" >
+              <input type="number" value="{{ product.first.id }}" name="product_id" >
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
             </div>
         </div>
