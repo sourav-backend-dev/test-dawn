@@ -97,18 +97,7 @@ img {
                 url: '/?section_id=cart-drawer',
                 type: 'GET',
                 dataType: 'html',
-                success:function(carthtml) {
-                  $('cart-drawer').html($(carthtml).find('cart-drawer').html());
-                }
-              });
-         } 
-    });
-});
-
-  $( document ).ready(function() {
-
-  
-Shopify.addToCart = function(items) {
+                success:function(items) {
     fetch(window.Shopify.routes.root + 'cart/add.js', {
   method: 'POST',
   headers: {
@@ -141,7 +130,8 @@ console.log("Clicked")
     console.log("Products: " + products)
     Shopify.addToCart(products);
   });
-  
+         } 
+    });
 });
 </script>
 
