@@ -87,8 +87,7 @@
   // $(document).on("click",".product__add-to-cart-button",function() {
   //         setTimeout(function(){ $('.cart_btn ').trigger('click'); }, 1500);
   //     });
-
-  $('#add-to-cart-btn').click(function(){    
+$(document).on("click","#add-to-cart-btn",function() {
     addItemToCart( 1709037562, 1).    // paste your id product number
   });
 
