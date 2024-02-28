@@ -89,10 +89,10 @@
   //     });
 
   $('#add-to-cart-btn').click(function(){    
-    addItemToCart( 1709037562, 1, "1", "Months").    // paste your id product number
+    addItemToCart( 1709037562, 1).    // paste your id product number
   });
 
-  function addItemToCart(variant_id, qty, frequency, unit_type) {
+  function addItemToCart(variant_id, qty) {
     data = {
       "id": variant_id,
       "quantity": qty
@@ -100,7 +100,7 @@
     
     jQuery.ajax({
       type: 'POST',
-      url: '/cart/add.js',
+      url: '/cart/quick-add.js',
       data: data,
       dataType: 'json',
       success: function() { 
