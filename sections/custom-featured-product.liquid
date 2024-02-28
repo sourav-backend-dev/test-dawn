@@ -83,13 +83,13 @@ img {
   $('#btn-cart').click(function() 
 {
     var id = $('#test_product_id').val();
-  var qty = $('#test_qty').val();
+  var quantity = $('#test_qty').val();
   console.log(id);
     $.ajax
     ({ 
         type: 'POST',
     url: '/cart/add.js',
-    data: 'qty=' + quantity + '&id=' + variant_id,
+    data: 'quantity=' + quantity + '&id=' + variant_id,
     dataType: 'json',
     success: function(line_item) { 
       if ((typeof callback) === 'function') {
