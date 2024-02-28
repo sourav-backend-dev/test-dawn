@@ -102,14 +102,13 @@ img {
                 type: 'GET',
                 dataType: 'html',
                 success:function(carthtml) {
-                  console.log(item);
                   if($("cart-drawer.drawer").hasClass('is-empty')){
                               $('cart-drawer').html($(carthtml).find('cart-drawer').html());
                               $("cart-drawer.is-empty .drawer__header").css("display", "block");
                               $("cart-drawer.is-empty .drawer__footer").css("display", "block");
                               $("cart-drawer.is-empty .cart__contents").css("display", "block");
                               $("cart-drawer.drawer").removeClass('is-empty');
-                              $('cart-drawer').append('<div class="ajax-cart-item__title">' + item.title + '</div>');
+                              const productTitle = '<div class="ajax-cart-item__title">' + item.title + '</div>';
                               const productImage = '<img class="ajax-cart-item__image" src="' + item.image + '" >';
                               const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
                               const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
