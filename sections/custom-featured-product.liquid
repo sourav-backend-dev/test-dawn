@@ -81,7 +81,6 @@ img {
 
 
 
-
 <script>
   $('#btn-cart').click(function() 
 {
@@ -97,6 +96,7 @@ img {
           },
         dataType: 'json', 
          success: function (data) { 
+           $('cart-drawer').addClass('active');
           $.ajax({
                 url: '/?section_id=cart-drawer',
                 type: 'GET',
