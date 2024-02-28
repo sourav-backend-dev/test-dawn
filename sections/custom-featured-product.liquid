@@ -37,34 +37,6 @@ img {
     margin: 1rem 0;
 }
 
-  .modal {
-            max-width: 575px;
-            background: white;
-            border: 5px solid #111;
-            padding: 50px 65px;
-            position: fixed;
-            z-index: 1000;
-        }
-        .modal .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .modal--overlay {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        .hidden {
-            display: none;
-        }
-  
 </style>
 
 {% if section.settings.product != blank  %}
@@ -107,21 +79,9 @@ img {
 </section>
 {% endif %}
 
-<div class="modal hidden" id="download-modal"></div>
-<div class="modal--overlay hidden"></div>
-
 <script>
-  var cartCount = 1;
-
-      $(document).ready(function() {
-                $('.modal--overlay')
-                    .on('click', function() {
-                        var overlay = $('.modal--overlay');
-                        closeModal(overlay);
-                    });
-            });
-  
-  $('#btn-cart').click(function() {   
+  $('#btn-cart').click(function() 
+{
   var id= $('#test_product_id').val();
   console.log(id);
     $.ajax
@@ -150,49 +110,6 @@ img {
             $('.modal')
                 .html('<span class="close" id="close">✕</span> The product you are trying to add is out of stock.');
             openModal();
-        }
-  //Modal Actions
-        //center modal based on window size
-        function centerModal() {
-            var modal = $('.modal.open');
-            var mWidth = modal.outerWidth();
-            var mHeight = modal.outerHeight();
-            var width = $(window)
-                .width();
-            var height = $(window)
-                .height();
-            if ((width % 1) != 0) {
-                width = Math.round(width);
-            }
-            if ((height % 1) != 0) {
-                height = Math.round(height);
-            }
-            var topPos = (height / 2) - (mHeight / 2);
-            var leftPos = (width / 2) - (mWidth / 2);
-            modal.css({top: topPos, left: leftPos});
-        }
-        //open modal and overlay
-        function openModal() {
-            $('.modal')
-                .removeClass('hidden')
-                .addClass('open');
-            $('.modal--overlay')
-                .removeClass('hidden')
-                .addClass('open');
-            $('body')
-                .css('overflow', 'hidden');
-            centerModal();
-        }
-        //close modal and overlay
-        function closeModal(overlay) {
-            $(overlay)
-                .addClass('hidden')
-                .removeClass('open');
-            $('.modal.open')
-                .addClass('hidden')
-                .removeClass('open');
-            $('body')
-                .css('overflow', 'auto');
         }
 </script>
 
