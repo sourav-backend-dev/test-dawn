@@ -1,46 +1,49 @@
 <style>
   h1,
-  h2,
-  h3,
-  h4 {
+h2,
+h3,
+h4 {
     line-height: 1.3;
-  }
+}
 
-  a {
+a {
     color: var(--secondary-color);
     text-decoration: none;
-  }
+}
 
-  img {
+img {
     width: 100%;
-  }
+}
 
-  .container {
+.container {
     max-width: 1100px;
     margin: auto;
     overflow: hidden;
     padding: 2rem;
-  }
+}
 
-  .section-a {
+.section-a {
     margin: 2rem 0;
-  }
+}
 
 
-  .section-a h1 {
+
+.section-a h1 {
     font-size: 4rem;
     color: var(--primary-color);
-  }
+}
 
-  .section-a p {
+.section-a p {
     margin: 1rem 0;
-  }
+}
 
 </style>
-{% if section.settings.product != blank %}
 
-  <section class="section-a">
+{% if section.settings.product != blank  %}
+{%- assign product = all_products[section.settings.product] -%}
+<section class="section-a">
     <div class="container">
+<<<<<<< HEAD
       <div class="row">
         <div class="col-md-7">{{ section.settings.product.images.first | img_url: '2048x' | img_tag }}</div>
         <div class="col-md-5">
@@ -54,89 +57,125 @@
             <input min="1" type="number" id="quantity" name="quantity" value="1"/>
             <input type="submit" value="ADD TO CART" class="add-to-cart-button btn btn-success" />
           </form>
+=======
+        <div class="row">
+            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '2048x' | img_tag }}</div>
+            <div class="col-md-5">
+                <h1>{{ section.settings.product }}</h1>
+              {% if section.settings.price %}
+                <h3> {{ section.settings.product.price }}</h3>
+              {% endif %}
+              <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
+              <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
+              <input type="number" value="1" id="test_qty" >
+                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
+            </div>
+>>>>>>> ba6246a4aec31d6caeac29afd2a96247df9ec7c2
         </div>
-      </div>
-    </div>
-  </section>
-
-{% else %}
-  
-  <section class="section-a">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-          {{ section.settings.image_2 | img_url: '2048x' | img_tag }}
-        </div>
-        <div class="col-md-5">
-          <h1>{{ section.settings.heading_2 }}</h1>
-          {% if section.settings.price %}
-            <h3>Rs. {{ section.settings.price }}</h3>
-          {% endif %}
-          <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
-          <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
-        </div>
-      </div>
     </div>
 </section>
 
+{% else %}
+  <section class="section-a">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+              {{ section.settings.image_2 | img_url: '2048x' | img_tag }}
+            </div>
+            <div class="col-md-5">
+                <h1>{{ section.settings.heading_2 }}</h1>
+              {% if section.settings.price %}
+                <h3>Rs. {{ section.settings.price }}</h3>
+              {% endif %}
+              <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
+                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
+            </div>
+        </div>
+    </div>
+</section>
 {% endif %}
+
+<script>
+  $('#btn-cart').click(function() 
+{
+  var id= $('#test_product_id').val();
+  console.log(id);
+    $.ajax
+    ({ 
+        type: 'POST',
+        url: '/cart/add.js',
+        data: {
+            quantity: 1,
+            id: $('#test_product_id').val()
+          },
+        dataType: 'json', 
+         success: function (data) { 
+          console.log(data);
+         } 
+    });
+});
+</script>
+
 {% schema %}
   {
     "name": "cust-feat-product",
     "settings": [
       {
-        "type": "product",
-        "id": "product",
-        "label": "Select Product"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_2",
-        "label": "choose image"
-      },
-      {
-        "type": "number",
-        "id": "price",
-        "label": "product price"
-      },
-      {
-        "type": "text",
-        "id": "desc",
-        "default": "Description",
-        "label": "description",
-        "info": "Description"
-      }, {
-        "type": "select",
-        "id": "alignment",
-        "options": [
-          {
-            "value": "left",
-            "label": "left"
-          }, {
-            "value": "center",
-            "label": "center"
-          }, {
-            "value": "justify",
-            "label": "justify"
-          }, {
-            "value": "right",
-            "label": "right"
-          }
-        ],
-        "default": "justify",
-        "label": "Description Alignment"
-      }, {
-        "type": "inline_richtext",
-        "id": "heading_2",
-        "default": "Heading",
-        "label": "heading",
-        "info": "Heading"
-      }
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "choose image"
+    },
+    {
+      "type": "number",
+      "id": "price",
+      "label": "product price"
+    },
+    {
+      "type": "text",
+      "id": "desc",
+      "default": "Description",
+      "label": "description",
+      "info": "Description"
+    },{
+      "type": "select",
+      "id": "alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },{
+          "value": "justify",
+          "label": "justify"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "justify",
+      "label": "Description Alignment"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading_2",
+      "default": "Heading",
+      "label": "heading",
+      "info": "Heading"
+    }
     ],
     "presets": [
-      {
-        "name": "cust-feat-product"
-      }
-    ]
+    {
+      "name": "cust-feat-product"
+    }
+  ]
   }
 {% endschema %}
