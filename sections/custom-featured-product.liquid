@@ -82,7 +82,8 @@ img {
 <script>
   $('#btn-cart').click(function() 
 {
-  
+  var id= $('#test_product_id').val();
+  console.log(id);
     $.ajax
     ({ 
         type: 'POST',
