@@ -85,8 +85,7 @@
 
 <script>
         $(document).ready(function() {
-          // Open cart drawer after add to cart button is clicked
-          $('.product__add-to-cart-button').one('click', function(){
+          $('.product__add-to-cart-button').on('click', function(){
             setTimeout(function(){ $('.header__cart ').click() }, 1500);
           });
         });
