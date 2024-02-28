@@ -89,16 +89,15 @@ img {
     ({ 
         type: 'POST',
     url: '/cart/add.js',
-    data: 'quantity=' + quantity + '&id=' + id,
-    dataType: 'json',
-    success: function(line_item) { 
-      if ((typeof callback) === 'function') {
-        callback(line_item);
-      }
-      else {
-        Shopify.onItemAdded(line_item);
-      }
-    }
+    data: {
+        quantity: 1,
+        id: $('#test_product_id').val()
+      },
+    dataType: 'json', 
+       success: function (data) { 
+        $('#CartCount span:first').text(data.quantity);
+        console.log(data.quantity);
+       } 
     });
 });
 </script>
