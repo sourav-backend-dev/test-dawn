@@ -78,7 +78,7 @@ img {
     </div>
 </section>
 {% endif %}
-
+{% render 'cart-drawer' %}
 <script>
   $('#btn-cart').click(function() 
 {
@@ -94,7 +94,7 @@ img {
           },
         dataType: 'json', 
          success: function (data) { 
-          {% render 'cart-drawer' %}
+          
          } 
     });
 });
