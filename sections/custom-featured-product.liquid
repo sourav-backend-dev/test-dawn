@@ -82,10 +82,9 @@
 </section>
 {% endif %}
 
-zcxs
 <script>
   $(document).on("click",".product__add-to-cart-button",function() {
-          setTimeout(function(){ $('.cart_btn ').click() }, 1500);
+          setTimeout(function(){ $('.cart_btn ').trigger('click'); }, 1500);
       });
 </script>
 
