@@ -101,17 +101,10 @@
     jQuery.ajax({
       type: 'POST',
       url: '/cart/quick-add.js',
-      data: data,
-      dataType: 'json',
-      success: function() { 
-        document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-          bubbles: true  
-       }));
+      success: function() {  
+        
       }
     });
-    document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-    	bubbles: true     
- 	 }));
   }
 </script>
 
