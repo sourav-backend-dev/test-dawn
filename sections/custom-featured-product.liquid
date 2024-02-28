@@ -112,8 +112,16 @@ img {
 
 <script>
   var cartCount = 1;
-  $('#btn-cart').click(function() 
-{
+
+      $(document).ready(function() {
+                $('.modal--overlay')
+                    .on('click', function() {
+                        var overlay = $('.modal--overlay');
+                        closeModal(overlay);
+                    });
+            });
+  
+  $('#btn-cart').click(function() {   
   var id= $('#test_product_id').val();
   console.log(id);
     $.ajax
