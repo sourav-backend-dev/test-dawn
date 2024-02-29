@@ -99,9 +99,16 @@
         <input type="radio" id="option3" name="contact[option]" value="Option 3">
         <label for="option3">Option 3</label>
       </div>
-      <div class="field my-3 mx-3 py-3 px-3">
-        <label for="ContactForm-password">Password:</label>
-        <input type="password" id="ContactForm-password" name="contact[password]">
+    <div class="field my-3 mx-3 py-3 px-3">
+        <input
+          type="password"
+          id="ContactForm-password"
+          class="field__input"
+          name="contact[password]"
+          value=""
+          placeholder="{{ 'templates.contact.form.password' }}"
+        >
+        <label class="field__label" for="ContactForm-password">{{ 'templates.contact.form.password' }}</label>
       </div>
       <div class="field my-3 mx-3 py-3 px-3">
         <label for="ContactForm-image">Upload an image:</label>
