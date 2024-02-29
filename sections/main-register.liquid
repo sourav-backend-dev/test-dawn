@@ -56,6 +56,7 @@
         <option value="Mrs." >Mrs.</option>
         <option value="Dr." >Dr.</option>
       </select>
+      <input type="hidden" id="sufixVal" name="customer[note][Sufix]"/>
     </div>
     <div class="field">
       <input
@@ -154,8 +155,8 @@
 </div>
 <script>
   $(document).on("change",".selector", function() {
-    var val = $(this).children("option:selected").val();
-    console.log(val);
+    var value = $(this).children("option:selected").val();
+    $('#sufixVal').val(value);
 });
 </script>
 {% schema %}
