@@ -1,10 +1,3 @@
-{% schema %}
-  {
-    "name": "Custom Form",
-    "settings": []
-  }
-{% endschema %}
-
 {% assign form_posted = false %}
 {% if form_posted.posted_successfully? %}
   {% assign form_posted = true %}
@@ -32,3 +25,10 @@
     <input type="submit" class="btn" value="Send">
   </form>
 {% endif %}
+
+{% schema %}
+  {
+    "name": "Custom Form",
+    "settings": []
+  }
+{% endschema %}
