@@ -154,7 +154,8 @@
 </div>
 <script>
   $(document).on("change",".selector", function() {
-    console.log(this.val());
+    var val = $(this).children("option:selected").val();
+    console.log(val);
 });
 </script>
 {% schema %}
