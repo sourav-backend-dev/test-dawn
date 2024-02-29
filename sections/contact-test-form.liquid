@@ -42,6 +42,14 @@
           >
           <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
         </div>
+        <label for=”contact-concern”>What’s your concern?</label>
+        <select id=”contact-concern” name=”contact[customer concern]”>
+        <option>I have a question about a product</option>
+        <option>I have a question about my order</option>
+        <option>I need to return a product</option>
+        <option>I have a question about my refund</option>
+        <option>I have another concern</option>
+        </select>
         <div class="field field--with-error">
           <input
             autocomplete="email"
