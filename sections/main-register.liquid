@@ -49,6 +49,26 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
+            {
+  "type": "select",
+  "id": "vertical_alignment",
+  "label": "Vertical alignment",
+  "options": [
+    {
+      "value": "top",
+      "label": "Top"
+    },
+    {
+      "value": "middle",
+      "label": "Middle"
+    },
+    {
+      "value": "bottom",
+      "label": "Bottom"
+    }
+  ],
+  "default": "middle"
+}
     <div class="field">
       <input
         type="text"
