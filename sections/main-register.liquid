@@ -50,8 +50,8 @@
       </ul>
     {%- endif -%}
     <div class="field">
+      <label for="Sufix">Choose Sufix :</label>
       <select id="Sufix" aria-invalid="false">
-        <label for="Sufix">Choose Sufix :</label>
         <option value="Mr." name="customer[note][Sufix]">Mr.</option>
         <option value="Mrs." name="customer[note][Sufix]">Mrs.</option>
         <option value="Dr." name="customer[note][Sufix]">Dr.</option>
@@ -108,6 +108,10 @@
       <label for="RegisterForm-email">
         {{ 'customer.register.email' | t }}
       </label>
+    </div>
+    <div class="field">
+      <label for="birthday">Birthday</label>
+      <input id="birthday" type="date" name="customer[note][Birthday]" />
     </div>
     {%- if form.errors contains 'email' -%}
       <span id="RegisterForm-email-error" class="form__message">
