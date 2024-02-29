@@ -6,8 +6,9 @@
 {% if form_posted %}
   <p>Form is Submitted Successfully!</p>
 {% else %}
-  <div class="container justify-content-center">
-    <div class="display-3 text-center my-3 mx-3 py-3 px-3">Form Submission </div>
+  <div class="container card">
+    <div class="display-3 text-center my-3 mx-3 py-3 px-3 card-header">Form Submission </div>
+  <div class="card-body">
   {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
@@ -123,5 +124,6 @@
       </div>
       <input type="submit" class="btn btn-success btn-lg my-3 mx-3 py-3 px-3" value="SEND">
   {%- endform -%}
+          </div>
   </div>
 {% endif %}
