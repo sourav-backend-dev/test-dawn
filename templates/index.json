@@ -51,28 +51,20 @@
     "custom_featured_product_hV3M8t": {
       "type": "custom-featured-product",
       "blocks": {
-        "product_yQJxDT": {
+        "product_HR3nyQ": {
           "type": "product",
           "settings": {
-            "product": "gentle-breeze-decaf",
-            "desc": "Description",
-            "alignment": "justify",
-            "heading_2": "Heading"
-          }
-        },
-        "product_JfhRG4": {
-          "type": "product",
-          "settings": {
-            "product": "medium-strong-symphony",
-            "desc": "Description",
-            "alignment": "justify",
+            "product": "",
+            "image_2": "shopify:\/\/shop_images\/EspressologyProductMockup_eb5e524d-dc4a-4724-9e87-1405a91db20b.png",
+            "price": 334553,
+            "desc": "Descriptionffds",
+            "alignment": "center",
             "heading_2": "Heading"
           }
         }
       },
       "block_order": [
-        "product_yQJxDT",
-        "product_JfhRG4"
+        "product_HR3nyQ"
       ],
       "settings": {
       }
