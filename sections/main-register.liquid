@@ -153,10 +153,10 @@
   {%- endform -%}
 </div>
 <script>
-  $(document).ready(function () { 
-            var value = $('select[name=selector] option').filter(':selected').val();
-            console.log(value);
-        }); 
+  $('#myDiv').click(function(){
+      var value = this.val();
+      console.log(value);
+ });
 </script>
 {% schema %}
 {
