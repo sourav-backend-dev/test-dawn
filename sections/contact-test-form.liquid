@@ -6,24 +6,7 @@
 {% if form_posted %}
   <p>Thank you for your submission!</p>
 {% else %}
-  <!-- <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
-    <div>
-      <label for="ContactFormName">Your Name</label>
-      <input type="text" id="ContactFormName" name="contact[name]" value="">
-    </div>
-    
-    <div>
-      <label for="ContactFormEmail">Your Email</label>
-      <input type="email" id="ContactFormEmail" name="contact[email]" value="" aria-required="true">
-    </div>
-    
-    <div>
-      <label for="ContactFormMessage">Your Message</label>
-      <textarea rows="5" id="ContactFormMessage" name="contact[body]" aria-required="true"></textarea>
-    </div>
-    
-    <input type="submit" class="btn" value="Send">
-  </form> -->
+  <div class="container">
   {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
@@ -125,6 +108,7 @@
         </button>
       </div>
     {%- endform -%}
+        </div>
 {% endif %}
 {% schema %}
   {
