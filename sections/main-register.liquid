@@ -152,7 +152,9 @@
     </button>
   {%- endform -%}
 </div>
-
+<script>
+  $('select[name=selector] option').filter(':selected').val()
+</script>
 {% schema %}
 {
   "name": "t:sections.main-register.name",
