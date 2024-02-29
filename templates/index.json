@@ -54,17 +54,25 @@
         "product_HR3nyQ": {
           "type": "product",
           "settings": {
-            "product": "",
             "image_2": "shopify:\/\/shop_images\/EspressologyProductMockup_eb5e524d-dc4a-4724-9e87-1405a91db20b.png",
             "price": 334553,
             "desc": "Descriptionffds",
             "alignment": "center",
             "heading_2": "Heading"
           }
+        },
+        "product_rGwzqx": {
+          "type": "product",
+          "settings": {
+            "desc": "Description",
+            "alignment": "justify",
+            "heading_2": "Heading"
+          }
         }
       },
       "block_order": [
-        "product_HR3nyQ"
+        "product_HR3nyQ",
+        "product_rGwzqx"
       ],
       "settings": {
       }
