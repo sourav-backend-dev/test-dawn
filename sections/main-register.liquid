@@ -153,10 +153,13 @@
   {%- endform -%}
 </div>
 <script>
-  $('.selector').click(function(){
-      var value = this.val();
+  $(document).ready(function(){
+  $(".selecto").click(function(){
+    var value = this.val();
       console.log(value);
- });
+    console.log("work");
+  });
+});
 </script>
 {% schema %}
 {
