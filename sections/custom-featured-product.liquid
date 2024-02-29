@@ -113,7 +113,6 @@ img {
                               const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
                               const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
                               const productRemove = '<div class="ajax-cart-item__remove ' + defaults.removeFromCartNoDot + '"></div>';
-                      
                               const concatProductInfo = '<div class="ajax-cart-item__single" data-line="' + Number(index + 1) + '">' + productTitle + productImage + productPrice + productQuantity + productRemove + '</div>';
                               $("#CartDrawer-Overlay").click(function(){
                                  $("cart-drawer.drawer").removeClass('active');
