@@ -6,9 +6,20 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "contact_test_form_Tr47HP": {
+      "type": "contact-test-form",
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "contact_test_form_Tr47HP"
   ]
 }
