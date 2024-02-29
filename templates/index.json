@@ -59,10 +59,20 @@
             "alignment": "justify",
             "heading_2": "Heading"
           }
+        },
+        "product_JfhRG4": {
+          "type": "product",
+          "settings": {
+            "product": "medium-strong-symphony",
+            "desc": "Description",
+            "alignment": "justify",
+            "heading_2": "Heading"
+          }
         }
       },
       "block_order": [
-        "product_yQJxDT"
+        "product_yQJxDT",
+        "product_JfhRG4"
       ],
       "settings": {
       }
