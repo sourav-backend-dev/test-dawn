@@ -52,9 +52,9 @@
     <div class="field">
       <label for="Sufix">Choose Sufix :</label>
       <select id="Sufix" aria-invalid="false">
-        <option value="Mr." name="selector">Mr.</option>
-        <option value="Mrs." name="selector">Mrs.</option>
-        <option value="Dr." name="selector">Dr.</option>
+        <option value="Mr." class="selector">Mr.</option>
+        <option value="Mrs." class="selector">Mrs.</option>
+        <option value="Dr." class="selector">Dr.</option>
       </select>
     </div>
     <div class="field">
@@ -153,7 +153,7 @@
   {%- endform -%}
 </div>
 <script>
-  $('#myDiv').click(function(){
+  $('.selector').click(function(){
       var value = this.val();
       console.log(value);
  });
