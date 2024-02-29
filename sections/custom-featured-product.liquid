@@ -38,6 +38,14 @@ img {
 }
 
 </style>
+{% for block in section.blocks %}  
+    {% if block.settings.image %}
+      <div class="slide container mx-5"> 
+        {{ block.settings.image | img_url: '1024x1024' | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+        <h3 class="text-center">{{ block.settings.footnote }}</h3>
+      </div>
+    {% endif %}
+  {% endfor %}
 {{ section.blocks.settings.footnote }}
 
 {% comment %}
