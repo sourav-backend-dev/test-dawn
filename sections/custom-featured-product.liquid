@@ -12,7 +12,7 @@ a {
 }
 
 img {
-    width: 100%;
+    width: 50%;
 }
 
 .container {
@@ -44,7 +44,7 @@ img {
 <section class="section-a">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '2048x' | img_tag }}</div>
+            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
             <div class="col-md-5">
                 <h1>{{ section.settings.product }}</h1>
               {% if section.settings.price %}
@@ -52,7 +52,7 @@ img {
               {% endif %}
               <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
               <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
-              <input type="number" value="1" id="test_qty" >
+              <input type="number" value="{{ section.settings.product.quantity }}" id="quantity" >
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
             </div>
         </div>
@@ -64,7 +64,7 @@ img {
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-              {{ section.settings.image_2 | img_url: '2048x' | img_tag }}
+              {{ section.settings.image_2 | img_url: '360x' | img_tag }}
             </div>
             <div class="col-md-5">
                 <h1>{{ section.settings.heading_2 }}</h1>
