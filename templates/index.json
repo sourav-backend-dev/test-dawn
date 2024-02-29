@@ -48,20 +48,28 @@
         "text": "Slider Here"
       }
     },
-    "custom_featured_product_GTMW3r": {
+    "custom_featured_product_hV3M8t": {
       "type": "custom-featured-product",
+      "blocks": {
+        "product_yQJxDT": {
+          "type": "product",
+          "settings": {
+            "product": "gentle-breeze-decaf",
+            "desc": "Description",
+            "alignment": "justify",
+            "heading_2": "Heading"
+          }
+        }
+      },
+      "block_order": [
+        "product_yQJxDT"
+      ],
       "settings": {
-        "product": "gentle-breeze-decaf",
-        "image_2": "shopify:\/\/shop_images\/b45975-4_product_65_preview.png",
-        "price": 500,
-        "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit accusamus dolores repellat quidem distinctio consequuntur a. At deleniti sed obcaecati. Molestiae temporibus quaerat placeat, culpa at eveniet quia ratione natus eum, possimus suscipit saepe omnis quis tenetur mollitia. Vitae praesentium voluptate facilis veniam eveniet voluptas porro exercitationem eligendi aperiam laborum.",
-        "alignment": "center",
-        "heading_2": "product 1"
       }
     }
   },
   "order": [
     "testing_slider_MpmXaM",
-    "custom_featured_product_GTMW3r"
+    "custom_featured_product_hV3M8t"
   ]
 }
