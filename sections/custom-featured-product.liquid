@@ -39,20 +39,20 @@ img {
 
 </style>
 
-{% if section.settings.product != blank  %}
-{%- assign product = all_products[section.settings.product] -%}
+{% if section.blocks.settings.product != blank  %}
+{%- assign product = all_products[section.blocks.settings.product] -%}
 <section class="section-a">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
+            <div class="col-md-7">{{ section.blocks.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
             <div class="col-md-5">
-                <h1>{{ section.settings.product }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.product.price }}</h3>
+                <h1>{{ section.blocks.settings.product }}</h1>
+              {% if section.blocks.settings.price %}
+                <h3>Rs. {{ section.blocks.settings.product.price }}</h3>
               {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
+              <p class="text-{{ section.blocks.settings.alignment }}">{{ section.blocks.settings.product.description }}</p>
               <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
-              <input type="number" value="{{ section.settings.product.quantity }}" id="quantity" >
+              <input type="number" value="{{ section.blocks.settings.product.quantity }}" id="quantity" >
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
             </div>
         </div>
@@ -64,14 +64,14 @@ img {
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-              {{ section.settings.image_2 | img_url: '360x' | img_tag }}
+              {{ section.blocks.settings.image_2 | img_url: '360x' | img_tag }}
             </div>
             <div class="col-md-5">
-                <h1>{{ section.settings.heading_2 }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.price }}</h3>
+                <h1>{{ section.blocks.settings.heading_2 }}</h1>
+              {% if section.blocks.settings.price %}
+                <h3>Rs. {{ section.blocks.settings.price }}</h3>
               {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
+              <p class="text-{{ section.blocks.settings.alignment }}">{{ section.blocks.settings.desc }}</p>
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
             </div>
         </div>
@@ -130,7 +130,13 @@ img {
 {% schema %}
   {
     "name": "cust-feat-product",
-    "settings": [
+    "tag" : "section",
+    "settings" : [],
+    "blocks" : [
+      {
+        "type": "product",
+        "name" : "product",
+        "settings": [
       {
       "type": "product",
       "id": "product",
@@ -182,10 +188,13 @@ img {
       "label": "heading",
       "info": "Heading"
     }
+    ]
+      }
     ],
     "presets": [
     {
-      "name": "cust-feat-product"
+      "name": "cust-feat-product",
+      "blocks" : [{"type":"product"}]
     }
   ]
   }
