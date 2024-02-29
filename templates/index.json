@@ -3,24 +3,15 @@
     "custom_featured_product_mMzMEG": {
       "type": "custom-featured-product",
       "blocks": {
-        "product_bwaEi7": {
+        "product_dWgMHj": {
           "type": "product",
           "settings": {
-            "image": "shopify:\/\/shop_images\/page-1_146e8177-b85f-4b65-a2a4-15ebe296c764.jpg",
-            "footnote": "ghhnjdt"
-          }
-        },
-        "product_pVXjc3": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/b45975-4_product_62_preview.png",
-            "footnote": "yujkutig"
+            "footnote": ""
           }
         }
       },
       "block_order": [
-        "product_bwaEi7",
-        "product_pVXjc3"
+        "product_dWgMHj"
       ],
       "settings": {
       }
