@@ -39,13 +39,8 @@
         {%- assign product = all_products[block.settings.product] -%}
         <div class="col-md-3">
           <div class="card" style="width: 18rem;">
-            <div class="card-header">
               <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
-              
-              <img src="{{ product.featured_image | img_url: 'master' }}">
-            
-            </div>
-            
+            <img src="{{ product.featured_image | img_url: 'master' }}">
 
             <div class="card-body">
               <div class="card-title">
