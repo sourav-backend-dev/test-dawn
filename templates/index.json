@@ -17,14 +17,25 @@
       "settings": {
       }
     },
-    "main_products_DM7VWB": {
+    "main_products_fe4Afq": {
       "type": "main-products",
+      "blocks": {
+        "product_x3niwW": {
+          "type": "product",
+          "settings": {
+            "product": "gentle-breeze-decaf"
+          }
+        }
+      },
+      "block_order": [
+        "product_x3niwW"
+      ],
       "settings": {
       }
     }
   },
   "order": [
     "custom_featured_product_mMzMEG",
-    "main_products_DM7VWB"
+    "main_products_fe4Afq"
   ]
 }
