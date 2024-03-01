@@ -48,7 +48,7 @@ a {
             <div class="card-title"><h2>{{ product.title }}</h2></div>
             <p class="card-text">{{ selectedVariant.price | money }}</p>
     
-            {% form 'product', product %}
+            
               <label class="product-option">Options</label>
               <select class="product-select" name="id">
                 {% for variant in product.variants %}
@@ -68,7 +68,7 @@ a {
                 <input name="quantity" id="quantity" value="1">
               </div>
               <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
-            {% endform %}
+            
           </div>
           </div>
           </div>
