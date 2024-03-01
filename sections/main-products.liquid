@@ -10,41 +10,44 @@
 <div class="product-page">
   <div class="width">
     <div class="product">
-      <div class="product-image">
-        <img src="{{ product.featured_image | img_url: 'master' }}">
-      </div>
-
-      <div class="product-content">
-        <h2>{{ product.title }}</h2>
-        <p class="produce-price">{{ selectedVariant.price | money }}</p>
-
-        <div class="product-description ">
-          {{ product.description }}
-        </div>
-
-        {% form 'product', product %}
-          <label class="product-option">Options</label>
-          <select class="product-select" name="id">
-            {% for variant in product.variants %}
-              <option
-                {% if selectedVariant.id == variant.id %}
-                  selected
-                {% endif %}
-                value="{{ variant.id }}"
-              >
-                {{ variant.title }}
-              </option>
-            {% endfor %}
-          </select>
-
-          <div class="product-quantity">
-            <label for="quantity">Quantity</label>
-            <input name="quantity" id="quantity" value="1">
+      {% for block in section.blocks %}  
+      {%- assign product = all_products[block.settings.product] -%}
+          <div class="product-image">
+            <img src="{{ product.featured_image | img_url: 'master' }}">
           </div>
-
-          <button class="button product-add" type="submit">Add to cart</button>
-        {% endform %}
-      </div>
+    
+          <div class="product-content">
+            <h2>{{ product.title }}</h2>
+            <p class="produce-price">{{ selectedVariant.price | money }}</p>
+    
+            <div class="product-description ">
+              {{ product.description }}
+            </div>
+    
+            {% form 'product', product %}
+              <label class="product-option">Options</label>
+              <select class="product-select" name="id">
+                {% for variant in product.variants %}
+                  <option
+                    {% if selectedVariant.id == variant.id %}
+                      selected
+                    {% endif %}
+                    value="{{ variant.id }}"
+                  >
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+    
+              <div class="product-quantity">
+                <label for="quantity">Quantity</label>
+                <input name="quantity" id="quantity" value="1">
+              </div>
+    
+              <button class="button product-add" type="submit">Add to cart</button>
+            {% endform %}
+          </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -83,6 +86,18 @@ addToCartForms.forEach((form) => {
 {
   "name": "Main product",
   "settings": [],
+  "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }],
   "presets": [
     {
       "name": "Main product"
