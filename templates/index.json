@@ -9,10 +9,18 @@
             "product": "gentle-breeze-decaf",
             "footnote": "hello"
           }
+        },
+        "product_Ka8nJb": {
+          "type": "product",
+          "settings": {
+            "product": "kenya-harvest-reserve",
+            "footnote": "hello"
+          }
         }
       },
       "block_order": [
-        "product_dWgMHj"
+        "product_dWgMHj",
+        "product_Ka8nJb"
       ],
       "settings": {
       }
