@@ -3,48 +3,16 @@
     "custom_featured_product_mMzMEG": {
       "type": "custom-featured-product",
       "blocks": {
-        "product_dWgMHj": {
+        "product_7e7JFd": {
           "type": "product",
           "settings": {
             "product": "gentle-breeze-decaf",
-            "footnote": "hello"
-          }
-        },
-        "product_c4xhEN": {
-          "type": "product",
-          "settings": {
-            "product": "medium-majesty-blend",
-            "footnote": ""
-          }
-        },
-        "product_AzXYLV": {
-          "type": "product",
-          "settings": {
-            "product": "stronghold-supreme",
-            "footnote": ""
-          }
-        },
-        "product_YPxdk3": {
-          "type": "product",
-          "settings": {
-            "product": "medium-strong-symphony",
-            "footnote": ""
-          }
-        },
-        "product_LaNT9R": {
-          "type": "product",
-          "settings": {
-            "product": "colombia-huila-el-tiple-excelso",
             "footnote": ""
           }
         }
       },
       "block_order": [
-        "product_dWgMHj",
-        "product_c4xhEN",
-        "product_AzXYLV",
-        "product_YPxdk3",
-        "product_LaNT9R"
+        "product_7e7JFd"
       ],
       "settings": {
       }
