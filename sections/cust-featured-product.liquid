@@ -86,10 +86,17 @@
             id: $('#var_id').find(":selected").val()
           },
        datatype: 'json',
-       success: function(data) {
-              console.log('success');
-              $('#cart-drawer').load(location.href + " #cart-drawer");
-           },
+        success: function(line_item) { 
+      if ((typeof callback) === 'function') {
+        callback(line_item);
+      }
+      else {
+        Shopify.onItemAdded(line_item);
+      }
+    },
+    error: function(XMLHttpRequest, textStatus) {
+      Shopify.onError(XMLHttpRequest, textStatus);
+    }
     });  
   });
 </script>
