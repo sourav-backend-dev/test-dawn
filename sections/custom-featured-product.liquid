@@ -38,12 +38,12 @@ img {
 }
 
 </style>
-{% for block in section.blocks %}  
-    {%- assign product = all_products[block.settings.product] -%}
-  
+
 <section class="section-a">
     <div class="container">
         <div class="row">
+          {% for block in section.blocks %}  
+    {%- assign product = all_products[block.settings.product] -%}
           <div class="col-md-3">
             <div class="card" style="width: 18rem;">
               {{ block.settings.product.images.first  | img_url: '360x' | img_tag }}
@@ -53,11 +53,11 @@ img {
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
               </div>
             </div>
-          </div>
+          </div>         
+      {% endfor %}
         </div>
     </div>
 </section>
-{% endfor %}
 
 <script>
   $('#btn-cart').click(function() 
