@@ -9,33 +9,48 @@
             "product": "gentle-breeze-decaf",
             "footnote": ""
           }
-        }
-      },
-      "block_order": [
-        "product_7e7JFd"
-      ],
-      "settings": {
-      }
-    },
-    "main_products_fe4Afq": {
-      "type": "main-products",
-      "blocks": {
-        "product_x3niwW": {
+        },
+        "product_PXt9AH": {
           "type": "product",
           "settings": {
-            "product": "gentle-breeze-decaf"
+            "product": "medium-majesty-blend",
+            "footnote": ""
+          }
+        },
+        "product_iMjaWH": {
+          "type": "product",
+          "settings": {
+            "product": "medium-strong-symphony",
+            "footnote": ""
+          }
+        },
+        "product_ccGgqR": {
+          "type": "product",
+          "settings": {
+            "product": "stronghold-supreme",
+            "footnote": ""
+          }
+        },
+        "product_TJtwbi": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "footnote": ""
           }
         }
       },
       "block_order": [
-        "product_x3niwW"
+        "product_7e7JFd",
+        "product_PXt9AH",
+        "product_iMjaWH",
+        "product_ccGgqR",
+        "product_TJtwbi"
       ],
       "settings": {
       }
     }
   },
   "order": [
-    "custom_featured_product_mMzMEG",
-    "main_products_fe4Afq"
+    "custom_featured_product_mMzMEG"
   ]
 }
