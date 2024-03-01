@@ -10,17 +10,17 @@
             "footnote": "hello"
           }
         },
-        "product_Ka8nJb": {
+        "product_c4xhEN": {
           "type": "product",
           "settings": {
-            "product": "kenya-harvest-reserve",
-            "footnote": "hello"
+            "product": "medium-majesty-blend",
+            "footnote": ""
           }
         }
       },
       "block_order": [
         "product_dWgMHj",
-        "product_Ka8nJb"
+        "product_c4xhEN"
       ],
       "settings": {
       }
