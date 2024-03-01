@@ -86,12 +86,9 @@
             id: $('#var_id').find(":selected").val()
           },
        datatype: 'json',
-        success: function(line_item) { 
-            Shopify.onItemAdded(line_item);
-    },
-    error: function(XMLHttpRequest, textStatus) {
-      Shopify.onError(XMLHttpRequest, textStatus);
-    }
+        success: function(data) { 
+            Shopify.onItemAdded(data);
+            }
     });  
   });
 </script>
