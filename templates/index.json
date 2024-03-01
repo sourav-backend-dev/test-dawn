@@ -17,10 +17,24 @@
             "footnote": ""
           }
         },
-        "product_KP9D9E": {
+        "product_AzXYLV": {
           "type": "product",
           "settings": {
-            "product": "rainier-stone-flooring-blocks",
+            "product": "stronghold-supreme",
+            "footnote": ""
+          }
+        },
+        "product_YPxdk3": {
+          "type": "product",
+          "settings": {
+            "product": "medium-strong-symphony",
+            "footnote": ""
+          }
+        },
+        "product_LaNT9R": {
+          "type": "product",
+          "settings": {
+            "product": "",
             "footnote": ""
           }
         }
@@ -28,7 +42,9 @@
       "block_order": [
         "product_dWgMHj",
         "product_c4xhEN",
-        "product_KP9D9E"
+        "product_AzXYLV",
+        "product_YPxdk3",
+        "product_LaNT9R"
       ],
       "settings": {
       }
