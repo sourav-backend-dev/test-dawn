@@ -35,27 +35,47 @@ a {
 
 </style>
 <div class="my-5 display-4 text-center">DRAWER CART</div>
-<section class="section-a">
-    <div class="container">
+<div class="product-page">
+  <div class="container">
         <div class="row">
-          {% for block in section.blocks %}  
-    {%- assign product = all_products[block.settings.product] -%}
+      {% for block in section.blocks %}  
+      {%- assign product = all_products[block.settings.product] -%}
           <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              {{ product.images.first  | img_url: '360x360' | img_tag }}
-              <div class="card-body">
-                <h3 class="card-title">{{ product.title }}</h3>
-                <p class="card-text">Rs. {{ product.price }}</p>
-                <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
-                <input type="number" id="quantity" >
-                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
+            <img src="{{ product.featured_image | img_url: 'master' }}">
+    
+          <div class="card-body">
+            <div class="card-title"><h2>{{ product.title }}</h2></div>
+            <p class="card-text">{{ selectedVariant.price | money }}</p>
+    
+            {% form 'product', product %}
+              <label class="product-option">Options</label>
+              <select class="product-select" name="id">
+                {% for variant in product.variants %}
+                  <option
+                    {% if selectedVariant.id == variant.id %}
+                      selected
+                    {% endif %}
+                    value="{{ variant.id }}"
+                  >
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+    
+              <div class="product-quantity">
+                <label for="quantity">Quantity</label>
+                <input name="quantity" id="quantity" value="1">
               </div>
-            </div>
-          </div>         
+              <button class="button product-add" type="submit">Add to cart</button>
+            {% endform %}
+          </div>
+          </div>
+          </div>
       {% endfor %}
-        </div>
     </div>
-</section>
+  </div>
+</div>
 
 <script>
   $('#btn-cart').click(function() 
