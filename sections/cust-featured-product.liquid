@@ -40,11 +40,14 @@
         <div class="col-md-3">
           <div class="card" style="width: 18rem;">
             <div class="card-header">
-              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button></div>
+              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
+              
+              <img src="{{ product.featured_image | img_url: 'master' }}">
+            
+            </div>
             
 
             <div class="card-body">
-              <img src="{{ product.featured_image | img_url: 'master' }}">
               <div class="card-title">
                 <h2>{{ product.title }}</h2>
               </div>
