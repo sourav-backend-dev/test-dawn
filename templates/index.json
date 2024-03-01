@@ -16,9 +16,15 @@
       ],
       "settings": {
       }
+    },
+    "main_products_DM7VWB": {
+      "type": "main-products",
+      "settings": {
+      }
     }
   },
   "order": [
-    "custom_featured_product_mMzMEG"
+    "custom_featured_product_mMzMEG",
+    "main_products_DM7VWB"
   ]
 }
