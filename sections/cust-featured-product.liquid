@@ -41,14 +41,11 @@
         <div class="col-md-3">
           <div class="card" style="width: 18rem;">
             <img src="{{ product.featured_image | img_url: 'master' }}">
-
             <div class="card-body">
               <div class="card-title">
                 <h2>{{ product.title }}</h2>
               </div>
               <p class="card-text">{{ selectedVariant.price | money }}</p>
-
-
               <label class="product-option">Options</label>
               <select
                 class="product-select"
@@ -64,7 +61,6 @@
                   </option>
                 {% endfor %}
               </select>
-
               <div class="product-quantity">
                 <label for="quantity">Quantity</label>
                 <input
