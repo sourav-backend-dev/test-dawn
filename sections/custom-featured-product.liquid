@@ -42,7 +42,7 @@ a {
     {%- assign product = all_products[block.settings.product] -%}
           <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              {{ block.settings.product.images.first  | img_url: '720x' | img_tag }}
+              {{ block.settings.product.images.first  | img_url: '360x360' | img_tag }}
               <div class="card-body">
                 <h3 class="card-title">{{ block.settings.product.title }}</h3>
                 <p class="card-text">Rs. {{ block.settings.product.price }}</p>
