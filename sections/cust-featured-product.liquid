@@ -78,18 +78,8 @@
 <script>
   $('#btn-cart').click(function() 
   {
-  var id = $('#var_id').find("selected").val();
-  var qty = $('#quantity').val();
-  var items = [{ quantity: qty, id: id }];
-   $.ajax({
-       type: "POST",
-       url: '/cart/add.js',
-       data: { items: items },
-       datatype: 'json',
-       success: function(data) {
-              console.log('success');
-           }
-    });  
+  var id = $('#var_id').find(":selected").val();
+  
   });
 </script>
 
