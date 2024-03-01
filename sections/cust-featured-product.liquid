@@ -75,7 +75,7 @@
     </div>
   </div>
 </div>
-<script>
+<!-- <script>
   $('#btn-cart').click(function() 
   {
    $.ajax({
@@ -116,8 +116,28 @@
       }
     });  
   });
+</script> -->
+<script>
+  let formData = {
+ 'items': [{
+  'id': 36110175633573,
+  'quantity': 2
+  }]
+  };
+  fetch(window.Shopify.routes.root + 'cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 </script>
-
 {% schema %}
   {
     "name": "cust-feat-product2",
