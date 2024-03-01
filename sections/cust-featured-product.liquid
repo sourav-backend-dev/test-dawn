@@ -82,11 +82,8 @@
   var qty = $('#quantity').val();
   var items = [{ quantity: qty, id: id }];
    $.ajax({
-       type: "POST",
+       type: 'POST',
        url: '/cart/add.js',
-       data: { items: items },
-       datatype: 'json',
-       
     });  
   });
 </script>
