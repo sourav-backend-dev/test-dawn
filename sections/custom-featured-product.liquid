@@ -44,6 +44,7 @@ img {
 <section class="section-a">
     <div class="container">
         <div class="row">
+          <div class="col-md-3">
             <div class="card" style="width: 18rem;">
               {{ block.settings.product.images.first  | img_url: '360x' | img_tag }}
               <div class="card-body">
@@ -52,6 +53,7 @@ img {
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
               </div>
             </div>
+          </div>
         </div>
     </div>
 </section>
