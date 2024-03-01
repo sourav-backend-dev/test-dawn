@@ -39,7 +39,7 @@
         {%- assign product = all_products[block.settings.product] -%}
         <div class="col-md-3">
           <div class="card" style="width: 18rem;">
-              <button type="submit" name="add" aria-label="Add to cart" class="btn product-form__cart-submit btn--secondary-accent ad_to_cart" id="ad_to_cart" aria-haspopup="dialog" data-add-to-cart="">button</button
+              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
             <img src="{{ product.featured_image | img_url: 'master' }}">
             <div class="card-body">
               <div class="card-title">
@@ -76,23 +76,22 @@
   </div>
 </div>
 <script>
-  $(document).on('click','.ad_to_cart',function(){ 
-var ID = $(this).find('.ad_to_cart_id').attr("var_id"); 
-$.ajax({
-type: 'POST',
-url: '/cart/add.js',
-data: {
-  quantity: 1,
-  id: $(this).find('.ad_to_cart_id').attr("var_id")
-},
-  dataType: 'json', 
- success: function (data) { 
-  $('#CartCount span:first').text(data.quantity);
-  console.log(data.quantity);
- 
- } 
- });
-}) 
+  $('#btn-cart').click(function() 
+  {
+   $.ajax({
+       url: '/cart/add.js',
+       type: 'POST',
+       data: {
+            quantity: $('#quantity').val(),
+            id: $('#var_id').find(":selected").val()
+          },
+       datatype: 'json',
+        success: function(data) { 
+           $('#CartCount span:first').text(data.quantity);
+          console.log(data);
+      }
+    });  
+  });
 </script>
 
 {% schema %}
