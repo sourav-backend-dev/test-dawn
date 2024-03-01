@@ -118,10 +118,12 @@
   });
 </script> -->
 <script>
+  var quantity= $('#quantity').val();
+  var id= $('#var_id').find(":selected").val();
   let formData = {
  'items': [{
-  'id': 36110175633573,
-  'quantity': 2
+  'id': id,
+  'quantity': quantity
   }]
   };
   fetch(window.Shopify.routes.root + 'cart/add.js', {
