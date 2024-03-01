@@ -88,8 +88,7 @@
        datatype: 'json',
        success: function(data) {
               console.log('success');
-              document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true }));
-              document.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true }));
+              $('#cart-drawer').load(location.href + " #cart-drawer");
            },
     });  
   });
