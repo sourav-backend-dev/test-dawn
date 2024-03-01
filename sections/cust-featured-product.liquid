@@ -1,0 +1,142 @@
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.3;
+  }
+
+  a {
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .section-a {
+    margin: 2rem 0;
+  }
+
+  .section-a h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+  }
+
+  .section-a p {
+    margin: 1rem 0;
+  }
+
+</style>
+<div class="my-5 display-4 text-center">DRAWER CART</div>
+<div class="product-page">
+  <div class="container">
+    <div class="row">
+      {% for block in section.blocks %}
+        {%- assign product = all_products[block.settings.product] -%}
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="{{ product.featured_image | img_url: 'master' }}">
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>{{ product.title }}</h2>
+              </div>
+              <p class="card-text">{{ selectedVariant.price | money }}</p>
+
+
+              <label class="product-option">Options</label>
+              <select
+                class="product-select"
+                name="id"
+                id="var_id">
+                {% for variant in product.variants %}
+                  <option
+                    {% if selectedVariant.id == variant.id %}
+                    selected
+                    {% endif %}
+                    value="{{ variant.id }}">
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+
+              <div class="product-quantity">
+                <label for="quantity">Quantity</label>
+                <input
+                  name="quantity"
+                  id="quantity"
+                  value="1">
+              </div>
+              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  $('#btn-cart').click(function() 
+  {
+  var id = $('#var_id').find(":selected").val();
+  var qty = $('#quantity').val();
+  var items = [{ quantity: qty, id: id }];
+  console.log(items);
+   $.ajax({
+       type: "POST",
+       url: '/cart/add.json',
+       data: { items: items },
+       success: function(data) {
+              console.log('success');
+           },
+       dataType: 'application/json'
+    });
+    // Now I will do a get to show the itens from cart
+   setTimeout(function() {
+   jQuery.getJSON('/cart.js', function(cart) {
+        let cartData = cart.items;
+        document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true})); 
+        document.dispatchEvent(new CustomEvent('cart:refresh', {
+            bubbles: true,
+             detail: cartData
+        })); 
+   });
+   }, 400);  
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "cust-feat-product",
+    "tag": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "cust-feat-product",
+        "blocks": [
+          {
+            "type": "product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
