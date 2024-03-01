@@ -1,5 +1,4 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -49,6 +48,16 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
+    <div class="field">
+      <label for="Sufix">Choose Sufix :</label>
+      <select id="Sufix" aria-invalid="false" class="selector">
+        <option value="NA" hidden selected>Choose an Option</option>
+        <option value="Mr." >Mr.</option>
+        <option value="Mrs." >Mrs.</option>
+        <option value="Dr." >Dr.</option>
+      </select>
+      <input type="hidden" id="sufixVal" name="customer[note][Sufix]"/>
+    </div>
     <div class="field">
       <input
         type="text"
@@ -101,6 +110,10 @@
         {{ 'customer.register.email' | t }}
       </label>
     </div>
+    <div class="field">
+      <label for="birthday">Birthday</label>
+      <input id="birthday" type="date" name="customer[note][Birthday]" />
+    </div>
     {%- if form.errors contains 'email' -%}
       <span id="RegisterForm-email-error" class="form__message">
         <svg aria-hidden="true" focusable="false">
@@ -140,7 +153,12 @@
     </button>
   {%- endform -%}
 </div>
-
+<script>
+  $(document).on("change",".selector", function() {
+    var value = $(this).children("option:selected").val();
+    $('#sufixVal').val(value);
+});
+</script>
 {% schema %}
 {
   "name": "t:sections.main-register.name",
