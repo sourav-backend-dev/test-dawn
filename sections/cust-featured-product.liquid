@@ -96,14 +96,6 @@
               document.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true }));
            }  
   });
-  $("#CartBubble").addClass("cart-link__bubble--visible");
-  document.addEventListener('cart:updated', function() {
-    console.log("teste");
-  });
-  document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true }));
-  document.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true })); 
-  document.dispatchEvent(new CustomEvent('cart:update ', {bubbles: true })); 
-}
 </script>
 
 {% schema %}
