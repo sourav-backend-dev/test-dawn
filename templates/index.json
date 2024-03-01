@@ -30,21 +30,13 @@
             "product": "stronghold-supreme",
             "footnote": ""
           }
-        },
-        "product_TJtwbi": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "footnote": ""
-          }
         }
       },
       "block_order": [
         "product_7e7JFd",
         "product_PXt9AH",
         "product_iMjaWH",
-        "product_ccGgqR",
-        "product_TJtwbi"
+        "product_ccGgqR"
       ],
       "settings": {
       }
