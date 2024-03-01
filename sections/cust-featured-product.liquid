@@ -88,7 +88,7 @@
   var items = [{ quantity: qty, id: id }];
    $.ajax({
        type: "POST",
-       url: '/cart/add.json',
+       url: '/?section_id=cart-drawer',
        data: { items: items },
        success: function(data) {
               console.log('success');
