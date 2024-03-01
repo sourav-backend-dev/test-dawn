@@ -60,14 +60,12 @@ a {
 <script>
   $('#btn-cart').click(function() 
 {
-  var id= $('#test_product_id').val();
-  console.log(id);
     $.ajax
     ({ 
         type: 'POST',
         url: '/cart/add.js',
         data: {
-            quantity: 1,
+            quantity: $('#quantity').val(),
             id: $('#test_product_id').val()
           },
         dataType: 'json', 
