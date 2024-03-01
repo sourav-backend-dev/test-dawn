@@ -216,51 +216,6 @@
   color: #212529;
 }
 </style>
-
-<div class="my-5 display-4 text-center">DRAWER CART</div>
-<div class="product-page">
-  <div class="container">
-        <div class="row">
-      {% for block in section.blocks %}  
-      {%- assign product = all_products[block.settings.product] -%}
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-            <img src="{{ product.featured_image | img_url: 'master' }}">
-    
-          <div class="card-body">
-            <div class="card-title"><h2>{{ product.title }}</h2></div>
-            <p class="card-text">{{ selectedVariant.price | money }}</p>
-    
-            {% form 'product', product %}
-              <label class="product-option">Options</label>
-              <select class="product-select" name="id">
-                {% for variant in product.variants %}
-                  <option
-                    {% if selectedVariant.id == variant.id %}
-                      selected
-                    {% endif %}
-                    value="{{ variant.id }}"
-                  >
-                    {{ variant.title }}
-                  </option>
-                {% endfor %}
-              </select>
-    
-              <div class="product-quantity">
-                <label for="quantity">Quantity</label>
-                <input name="quantity" id="quantity" value="1">
-              </div>
-              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
-            {% endform %}
-          </div>
-          </div>
-          </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-<!-- <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">CART</button> -->
-
 <div class="cart-drawer">
   <div class="cart-drawer-box">
     {% comment %} Header section {% endcomment %}
@@ -327,6 +282,53 @@
     {% endform %}
   </div>
 </div>
+
+
+<div class="my-5 display-4 text-center">DRAWER CART</div>
+<div class="product-page">
+  <div class="container">
+        <div class="row">
+      {% for block in section.blocks %}  
+      {%- assign product = all_products[block.settings.product] -%}
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+            <img src="{{ product.featured_image | img_url: 'master' }}">
+    
+          <div class="card-body">
+            <div class="card-title"><h2>{{ product.title }}</h2></div>
+            <p class="card-text">{{ selectedVariant.price | money }}</p>
+    
+            {% form 'product', product %}
+              <label class="product-option">Options</label>
+              <select class="product-select" name="id">
+                {% for variant in product.variants %}
+                  <option
+                    {% if selectedVariant.id == variant.id %}
+                      selected
+                    {% endif %}
+                    value="{{ variant.id }}"
+                  >
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+    
+              <div class="product-quantity">
+                <label for="quantity">Quantity</label>
+                <input name="quantity" id="quantity" value="1">
+              </div>
+              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
+            {% endform %}
+          </div>
+          </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">CART</button> -->
+
+
 
 <script>
   function openCartDrawer() {
