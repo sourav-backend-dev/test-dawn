@@ -92,12 +92,8 @@
        datatype: 'json',
        success: function(data) {
               console.log('success');
-         let cartData = data;
-        document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true})); 
-        document.dispatchEvent(new CustomEvent('cart:refresh', {
-            bubbles: true,
-            detail: cartData
-        }));
+              document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true }));
+              document.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true }));
            }
     });  
   });
