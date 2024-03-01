@@ -41,14 +41,11 @@
           <div class="card" style="width: 18rem;">
               <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
             <img src="{{ product.featured_image | img_url: 'master' }}">
-
             <div class="card-body">
               <div class="card-title">
                 <h2>{{ product.title }}</h2>
               </div>
               <p class="card-text">{{ selectedVariant.price | money }}</p>
-
-
               <label class="product-option">Options</label>
               <select
                 class="product-select"
@@ -64,7 +61,6 @@
                   </option>
                 {% endfor %}
               </select>
-
               <div class="product-quantity">
                 <label for="quantity">Quantity</label>
                 <input
@@ -84,7 +80,7 @@
   {
   var id = $('#var_id').find(":selected").val();
   var qty = $('#quantity').val();
-  var items = [{ quantity: qty, id: id }];
+  var items = [{ quantity: 'qty', id: 'id' }];
    $.ajax({
        type: "POST",
        url: '/cart/add.js',
