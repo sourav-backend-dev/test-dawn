@@ -16,11 +16,19 @@
             "product": "medium-majesty-blend",
             "footnote": ""
           }
+        },
+        "product_KP9D9E": {
+          "type": "product",
+          "settings": {
+            "product": "rainier-stone-flooring-blocks",
+            "footnote": ""
+          }
         }
       },
       "block_order": [
         "product_dWgMHj",
-        "product_c4xhEN"
+        "product_c4xhEN",
+        "product_KP9D9E"
       ],
       "settings": {
       }
