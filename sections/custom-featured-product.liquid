@@ -39,8 +39,8 @@ img {
 
 </style>
 {% for block in section.blocks %}  
-    {{ block.settings.product }}
-  {% endfor %}
+    {{ block.settings.product.id }}
+{% endfor %}
 
 {% comment %}
 {% if section.blocks.settings.product != blank  %}
