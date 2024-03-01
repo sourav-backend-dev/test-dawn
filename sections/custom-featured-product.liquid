@@ -80,6 +80,7 @@ a {
 <script>
   $('#btn-cart').click(function() 
 {
+  console.log($('#id').find(":selected").val());
     $.ajax
     ({ 
         type: 'POST',
