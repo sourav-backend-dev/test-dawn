@@ -48,7 +48,7 @@ img {
             <div class="card" style="width: 18rem;">
               {{ block.settings.product.images.first  | img_url: '360x' | img_tag }}
               <div class="card-body">
-                <h5 class="card-title">{{ block.settings.product }}</h5>
+                <h3 class="card-title">{{ block.settings.product }}</h3>
                 <p class="card-text">Rs. {{ block.settings.product.price }}</p>
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
               </div>
