@@ -79,7 +79,9 @@
   $('#btn-cart').click(function() 
   {
   var id = $('#var_id').find(":selected").val();
-  console.log(id);
+  var qty = $('#quantity').val();
+  var items = [{ quantity: qty, id: id }];
+     
   });
 </script>
 
