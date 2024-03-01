@@ -38,48 +38,26 @@ img {
 }
 
 </style>
-
-{% if section.settings.product != blank  %}
-{%- assign product = all_products[section.settings.product] -%}
+{% for block in section.blocks %}  
+    {%- assign product = all_products[block.settings.product] -%}
 <section class="section-a">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">{{ section.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
+            <div class="col-md-7">{{ block.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
             <div class="col-md-5">
-                <h1>{{ section.settings.product }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.product.price }}</h3>
+                <h1>{{ block.settings.product }}</h1>
+              {% if block.settings.price %}
+                <h3>Rs. {{ block.settings.product.price }}</h3>
               {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.product.description }}</p>
+              <p class="text-{{ block.settings.alignment }}">{{ block.settings.product.description }}</p>
               <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
-              <input type="number" value="{{ section.settings.product.quantity }}" id="quantity" >
+              <input type="number" value="{{ block.settings.product.quantity }}" id="quantity" >
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
             </div>
         </div>
     </div>
 </section>
-
-{% else %}
-  <section class="section-a">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-              {{ section.settings.image_2 | img_url: '360x' | img_tag }}
-            </div>
-            <div class="col-md-5">
-                <h1>{{ section.settings.heading_2 }}</h1>
-              {% if section.settings.price %}
-                <h3>Rs. {{ section.settings.price }}</h3>
-              {% endif %}
-              <p class="text-{{ section.settings.alignment }}">{{ section.settings.desc }}</p>
-                <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2">SOLD OUT</button>
-            </div>
-        </div>
-    </div>
-</section>
-{% endif %}
-
-
+{% endfor %}
 
 <script>
   $('#btn-cart').click(function() 
@@ -130,62 +108,29 @@ img {
 {% schema %}
   {
     "name": "cust-feat-product",
-    "settings": [
+    "tag" : "section",
+    "settings" : [],
+    "blocks": [
       {
-      "type": "product",
-      "id": "product",
-      "label": "Select Product"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "choose image"
-    },
-    {
-      "type": "number",
-      "id": "price",
-      "label": "product price"
-    },
-    {
-      "type": "text",
-      "id": "desc",
-      "default": "Description",
-      "label": "description",
-      "info": "Description"
-    },{
-      "type": "select",
-      "id": "alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "left"
-        },
-        {
-          "value": "center",
-          "label": "center"
-        },{
-          "value": "justify",
-          "label": "justify"
-        },
-        {
-          "value": "right",
-          "label": "right"
-        }
-      ],
-      "default": "justify",
-      "label": "Description Alignment"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading_2",
-      "default": "Heading",
-      "label": "heading",
-      "info": "Heading"
-    }
-    ],
+        "type": "product",
+        "name": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "text",
+            "id": "footnote",
+            "label": "Add Foot Note"
+          }
+        ]
+      }],
     "presets": [
     {
-      "name": "cust-feat-product"
+      "name": "cust-feat-product",
+      "blocks" : [{"type":"product"}]
     }
   ]
   }

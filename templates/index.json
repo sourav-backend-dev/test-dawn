@@ -1,67 +1,40 @@
 {
   "sections": {
-    "testing_slider_MpmXaM": {
-      "type": "testing-slider",
+    "custom_featured_product_mMzMEG": {
+      "type": "custom-featured-product",
       "blocks": {
-        "slides_HhmBHG": {
-          "type": "slides",
+        "product_dWgMHj": {
+          "type": "product",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img5.jpg",
-            "footnote": "Image 1"
+            "product": "gentle-breeze-decaf",
+            "footnote": "hello"
           }
         },
-        "slides_69K3at": {
-          "type": "slides",
+        "product_c4xhEN": {
+          "type": "product",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img2.png",
-            "footnote": "Image 2"
-          }
-        },
-        "slides_Mk4363": {
-          "type": "slides",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/FU39R1W.png",
-            "footnote": "Image 3"
-          }
-        },
-        "slides_Nz6X8T": {
-          "type": "slides",
-          "settings": {
+            "product": "medium-majesty-blend",
             "footnote": ""
           }
         },
-        "slides_4Lw7Ve": {
-          "type": "slides",
+        "product_KP9D9E": {
+          "type": "product",
           "settings": {
+            "product": "rainier-stone-flooring-blocks",
             "footnote": ""
           }
         }
       },
       "block_order": [
-        "slides_HhmBHG",
-        "slides_69K3at",
-        "slides_Mk4363",
-        "slides_Nz6X8T",
-        "slides_4Lw7Ve"
+        "product_dWgMHj",
+        "product_c4xhEN",
+        "product_KP9D9E"
       ],
       "settings": {
-        "text": "Slider Here"
-      }
-    },
-    "custom_featured_product_GTMW3r": {
-      "type": "custom-featured-product",
-      "settings": {
-        "product": "gentle-breeze-decaf",
-        "image_2": "shopify:\/\/shop_images\/b45975-4_product_65_preview.png",
-        "price": 500,
-        "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit accusamus dolores repellat quidem distinctio consequuntur a. At deleniti sed obcaecati. Molestiae temporibus quaerat placeat, culpa at eveniet quia ratione natus eum, possimus suscipit saepe omnis quis tenetur mollitia. Vitae praesentium voluptate facilis veniam eveniet voluptas porro exercitationem eligendi aperiam laborum.",
-        "alignment": "center",
-        "heading_2": "product 1"
       }
     }
   },
   "order": [
-    "testing_slider_MpmXaM",
-    "custom_featured_product_GTMW3r"
+    "custom_featured_product_mMzMEG"
   ]
 }
