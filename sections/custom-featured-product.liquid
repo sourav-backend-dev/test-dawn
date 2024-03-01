@@ -34,10 +34,12 @@ a {
 }
 
 </style>
-{% for item in cart.items %}\
-
+<div class="hidden">
+{% for item in cart.items %}
   <img src = "{{ item.image | img_url:'200x' }}">
 {% endfor %}
+</div>
+
 
 <div class="my-5 display-4 text-center">DRAWER CART</div>
 <div class="product-page">
