@@ -84,6 +84,11 @@
    $.ajax({
        type: 'POST',
        url: '/cart/add.js',
+       data: { items: items },
+       datatype: 'json',
+       success: function(data) {
+              console.log('success');
+           }
     });  
   });
 </script>
