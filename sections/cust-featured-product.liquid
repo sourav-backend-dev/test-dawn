@@ -80,7 +80,7 @@
   {
   var id = $('#var_id').find(":selected").val();
   var qty = $('#quantity').val();
-  var items = [{ quantity: qty, id: id }];
+  var items = { quantity: qty, id: id };
    $.ajax({
        url: '/cart/add.js',
        type: 'POST',
