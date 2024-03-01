@@ -3,38 +3,39 @@
     "custom_featured_product_mMzMEG": {
       "type": "custom-featured-product",
       "blocks": {
-        "product_dWgMHj": {
+        "product_7e7JFd": {
           "type": "product",
           "settings": {
             "product": "gentle-breeze-decaf",
-            "footnote": "hello"
-          }
-        },
-        "product_c4xhEN": {
-          "type": "product",
-          "settings": {
-            "product": "medium-majesty-blend",
-            "footnote": ""
-          }
-        },
-        "product_KP9D9E": {
-          "type": "product",
-          "settings": {
-            "product": "rainier-stone-flooring-blocks",
             "footnote": ""
           }
         }
       },
       "block_order": [
-        "product_dWgMHj",
-        "product_c4xhEN",
-        "product_KP9D9E"
+        "product_7e7JFd"
+      ],
+      "settings": {
+      }
+    },
+    "main_products_fe4Afq": {
+      "type": "main-products",
+      "blocks": {
+        "product_x3niwW": {
+          "type": "product",
+          "settings": {
+            "product": "gentle-breeze-decaf"
+          }
+        }
+      },
+      "block_order": [
+        "product_x3niwW"
       ],
       "settings": {
       }
     }
   },
   "order": [
-    "custom_featured_product_mMzMEG"
+    "custom_featured_product_mMzMEG",
+    "main_products_fe4Afq"
   ]
 }

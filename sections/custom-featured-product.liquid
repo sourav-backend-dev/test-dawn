@@ -11,10 +11,6 @@ a {
     text-decoration: none;
 }
 
-img {
-    width: 50%;
-}
-
 .container {
     max-width: 1100px;
     margin: auto;
@@ -38,38 +34,38 @@ img {
 }
 
 </style>
-{% for block in section.blocks %}  
-    {%- assign product = all_products[block.settings.product] -%}
+
 <section class="section-a">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">{{ block.settings.product.images.first  | img_url: '360x' | img_tag }}</div>
-            <div class="col-md-5">
-                <h1>{{ block.settings.product }}</h1>
-              {% if block.settings.price %}
-                <h3>Rs. {{ block.settings.product.price }}</h3>
-              {% endif %}
-              <p class="text-{{ block.settings.alignment }}">{{ block.settings.product.description }}</p>
-              <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
-              <input type="number" value="{{ block.settings.product.quantity }}" id="quantity" >
+          {% for block in section.blocks %}  
+    {%- assign product = all_products[block.settings.product] -%}
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+              {{ product.images.first  | img_url: '360x360' | img_tag }}
+              <div class="card-body">
+                <h3 class="card-title">{{ product.title }}</h3>
+                <p class="card-text">Rs. {{ product.price }}</p>
+                <input type="number" value="{{ product.selected_or_first_available_variant.id }}" id="test_product_id" >
+                <input type="number" id="quantity" >
                 <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">CART</button>
+              </div>
             </div>
+          </div>         
+      {% endfor %}
         </div>
     </div>
 </section>
-{% endfor %}
 
 <script>
   $('#btn-cart').click(function() 
 {
-  var id= $('#test_product_id').val();
-  console.log(id);
     $.ajax
     ({ 
         type: 'POST',
         url: '/cart/add.js',
         data: {
-            quantity: 1,
+            quantity: $('#quantity').val(),
             id: $('#test_product_id').val()
           },
         dataType: 'json', 
@@ -81,23 +77,23 @@ img {
                 dataType: 'html',
                 success:function(carthtml) {
                   if($("cart-drawer.drawer").hasClass('is-empty')){
-                              $('cart-drawer').html($(carthtml).find('cart-drawer').html());
-                              $("cart-drawer.is-empty .drawer__header").css("display", "block");
-                              $("cart-drawer.is-empty .drawer__footer").css("display", "block");
-                              $("cart-drawer.is-empty .cart__contents").css("display", "block");
-                              $("cart-drawer.drawer").removeClass('is-empty');
-                              const productTitle = '<div class="ajax-cart-item__title">' + item.title + '</div>';
-                              const productImage = '<img class="ajax-cart-item__image" src="' + item.image + '" >';
-                              const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
-                              const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
-                              const productRemove = '<div class="ajax-cart-item__remove ' + defaults.removeFromCartNoDot + '"></div>';
-                              const concatProductInfo = '<div class="ajax-cart-item__single" data-line="' + Number(index + 1) + '">' + productTitle + productImage + productPrice + productQuantity + productRemove + '</div>';
-                              $("#CartDrawer-Overlay").click(function(){
-                                 $("cart-drawer.drawer").removeClass('active');
-                              });
-                          } else {
-                             $("cart-drawer").html($(carthtml).find('cart-drawer').html());
-                          }
+                      $('cart-drawer').html($(carthtml).find('cart-drawer').html());
+                      $("cart-drawer.is-empty .drawer__header").css("display", "block");
+                      $("cart-drawer.is-empty .drawer__footer").css("display", "block");
+                      $("cart-drawer.is-empty .cart__contents").css("display", "block");
+                      $("cart-drawer.drawer").removeClass('is-empty');
+                      const productTitle = '<div class="ajax-cart-item__title">' + item.title + '</div>';
+                      const productImage = '<img class="ajax-cart-item__image" src="' + item.image + '" >';
+                      const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
+                      const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
+                      const productRemove = '<div class="ajax-cart-item__remove ' + defaults.removeFromCartNoDot + '"></div>';
+                      const concatProductInfo = '<div class="ajax-cart-item__single" data-line="' + Number(index + 1) + '">' + productTitle + productImage + productPrice + productQuantity + productRemove + '</div>';
+                      $("#CartDrawer-Overlay").click(function(){
+                         $("cart-drawer.drawer").removeClass('active');
+                      });
+                  } else {
+                     $("cart-drawer").html($(carthtml).find('cart-drawer').html());
+                  }
                 }
               });
          } 
