@@ -1,1 +1,31 @@
-{"sections":{"main":{"type":"main-page","settings":{"padding_top":28,"padding_bottom":28}},"testing_slider_CAX8TH":{"type":"testing-slider","blocks":{"slides_dETrkq":{"type":"slides","settings":{"image":"shopify:\/\/shop_images\/img5.jpg","footnote":""}},"slides_rC9xMX":{"type":"slides","settings":{"image":"shopify:\/\/shop_images\/FU39R1W.png","footnote":""}},"slides_ftaydX":{"type":"slides","settings":{"image":"shopify:\/\/shop_images\/img2.png","footnote":""}}},"block_order":["slides_dETrkq","slides_rC9xMX","slides_ftaydX"],"settings":{"text":""}}},"order":["main","testing_slider_CAX8TH"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "cust_featured_product_CLVmXa": {
+      "type": "cust-featured-product",
+      "blocks": {
+        "product_EB6NRC": {
+          "type": "product",
+          "settings": {
+            "product": "gentle-breeze-decaf"
+          }
+        }
+      },
+      "block_order": [
+        "product_EB6NRC"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cust_featured_product_CLVmXa"
+  ]
+}
