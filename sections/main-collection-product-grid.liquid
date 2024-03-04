@@ -48,19 +48,11 @@
         <div class="dropdown">
   <span>Mouse over me</span>
   <div class="dropdown-content">
-    <p>Hello World!</p>
-  </div>
-</div>
-          <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        {% for collection in collections %}
+    {% for collection in collections %}
         {{ collection.title | link_to: collection.url }}
         {% endfor %}
-      </div>
-    </div>
+  </div>
+</div>
         
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
