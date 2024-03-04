@@ -28,7 +28,7 @@
       <select>
         {% for collection in collections %}
             <option>
-              {{ collection.title | link_to: collection.url }}
+              <a href= {{ collection.title | link_to: collection.url }} >fvgrt</a>
             </option>
         {% endfor %}
       </select>
