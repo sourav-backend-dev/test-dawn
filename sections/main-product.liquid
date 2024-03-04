@@ -428,7 +428,7 @@
               {% for variant in product.variants %}
                 {% if variant.metafields.custom.colorvariant  %}
                       <input
-                        type="button"
+                        type="hidden"
                         id="{{ input_id }}"
                         name="{{ option.name }}"
                         value="{{ variant.metafields.custom.colorvariant }}"
@@ -438,8 +438,8 @@
                         {% if option_disabled %}
                           class="disabled"
                         {% endif %}
-                        style="background-color:{{ variant.metafields.custom.colorvariant }}"
                       >
+                  <div class="btn" style="background-color:{{ variant.metafields.custom.colorvariant }}"></div>
                   {%  endif %}
               {% endfor %}
             {%- when 'buy_buttons' -%}
