@@ -31,12 +31,7 @@
     <div class="select">
       <select>
         {% for collection in collections %}
-          <option
-            value="{{- collection.title | link_to: collection.url }}"
-            {% if option.value == sort_by %}
-              selected="selected"
-            {% endif %}
-          >
+          <option value="{{- collection.title | link_to: collection.url }}">
             {{ option.name | escape }}
           </option>
         {%- endfor -%}
