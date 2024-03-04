@@ -131,7 +131,7 @@
 
               {% comment %} custom image meatfield  {% endcomment %}
             {%- assign product_list = product.variants.metafields.custom.productmetafield | split: ',' | uniq -%}
-              {{ product_list.size }}
+              {{ product_list }}
             
 
 
