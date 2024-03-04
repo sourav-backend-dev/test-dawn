@@ -46,11 +46,11 @@
 {%- endstyle -%}
     
         <div class="dropdown">
-  <span>Mouse over me</span>
+  <span>Collections Selection</span>
   <div class="dropdown-content">
     {% for collection in collections %}
-        {{ collection.title | link_to: collection.url }}
-        {% endfor %}
+        {{ collection.title | link_to: collection.url }}<br/>
+    {% endfor %}
   </div>
 </div>
         
