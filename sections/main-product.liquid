@@ -128,14 +128,6 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-              {% for variant in product.variants %}
-              {% if variant.metafields.custom.variant_image %}
-              <img src="{{ variant.metafields.custom.variant_image | img_url }}">
-              <p>{{ variant.metafields.custom.variant_name }}</p>
-              {% endif %}
-              {% endfor %}
-            
-            
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
