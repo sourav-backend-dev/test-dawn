@@ -438,11 +438,8 @@
                         {% if option_disabled %}
                           class="disabled"
                         {% endif %}
+                        style="background-color:{{ variant.metafields.custom.colorvariant }}"
                       >
-                      <label for="{{ input_id }}">
-                        {{ variant.metafields.custom.colorvariant }}
-                        {{ label_unavailable }}
-                      </label>
                   {%  endif %}
               {% endfor %}
             {%- when 'buy_buttons' -%}
