@@ -29,18 +29,10 @@
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     <div class="select">
-      {% for collection in collections %}
-        {{- collection.title | link_to: collection.url }}
-      {% endfor %}
-      <select
-        name="sort_by"
-        class="facet-filters__sort select__select caption-large"
-        id="SortBy"
-        aria-describedby="a11y-refresh-page-message"
-      >
-        {%- for option in collection.sort_options -%}
+      <select>
+        {% for collection in collections %}
           <option
-            value="{{ option.value | escape }}"
+            value="{{- collection.title | link_to: collection.url }}"
             {% if option.value == sort_by %}
               selected="selected"
             {% endif %}
