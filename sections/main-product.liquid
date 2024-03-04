@@ -428,7 +428,7 @@
               {% for variant in product.variants %}
                 {% if variant.metafields.custom.colorvariant  %}
                       <input
-                        type="radio"
+                        type="button"
                         id="{{ input_id }}"
                         name="{{ option.name }}"
                         value="{{ variant.metafields.custom.colorvariant }}"
