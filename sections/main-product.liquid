@@ -130,11 +130,9 @@
               </div>
 
               {% comment %} custom image meatfield  {% endcomment %}
-              {% for variant in product.variants %}
-                {% for product in variant.metafields.custom.productmetafield %}
-                  {{ product }}
-                {% endfor %}
-              {% endfor %}
+            {%- assign product_list = product.variants.metafields.custom.productmetafield | split: ',' | uniq -%}
+              {{ product_list.size }}
+            
 
 
             
