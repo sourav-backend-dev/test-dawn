@@ -130,7 +130,7 @@
               </div>
               {% for variant in product.variants %}
               {% if variant.metafields.custom.variant_image %}
-              <img src="{{ variant.metafields.custom.variant_image | img_tag }}">
+              <img src="{{ variant.metafields.custom.variant_image | img_url }}">
               <p>{{ variant.metafields.custom.variant_name }}</p>
               {% endif %}
               {% endfor %}
