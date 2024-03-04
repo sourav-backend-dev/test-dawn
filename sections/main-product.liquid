@@ -128,7 +128,7 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-            <img src="{{ product.metafields.my_fields.custom.variant_image | img_url: 'master' }}">
+            <img src="{{ product.metafields.my_fields.custom.variant_image | img_url: '150x150' }}">
             
             {%- when 'inventory' -%}
               <p
