@@ -34,9 +34,8 @@
           <option value="{{ collection.title | link_to: collection.url }}">
             {{ option.name | escape }}
           </option>
-        {%- endfor -%}
+        {% endfor %}
       </select>
-      {% render 'icon-caret' %}
     </div>
 
     {% for tag in collection.all_tags %}
