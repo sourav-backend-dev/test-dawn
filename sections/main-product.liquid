@@ -424,6 +424,7 @@
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              <p>Choose Color</p>
               {% for variant in product.variants %}
                 {% if variant.metafields.custom.colorvariant  %}
                   <div class="btn" style="background-color:{{ variant.metafields.custom.colorvariant }}; height:50px; width:50px; border-radius:50%"> </div>
