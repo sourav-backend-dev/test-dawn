@@ -25,11 +25,12 @@
     }
   }
 {%- endstyle -%}
-    <div class="select">
-      <select>
-        {% for collection in collections %}
+{% for collection in collections %}
             {{- collection.title | link_to: collection.url }}
         {% endfor %}
+    <div class="select">
+      <select>
+        
       </select>
     </div>
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
