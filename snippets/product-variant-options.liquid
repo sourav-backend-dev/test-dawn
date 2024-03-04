@@ -105,26 +105,6 @@
         {% endif %}
       {% endfor %}
     </label>
-      {% for variant in product.variants %}
-        {% if variant.metafields.custom.colorvariant  %}
-              <input
-                type="radio"
-                id="{{ input_id }}"
-                name="{{ option.name }}"
-                value="{{ variant.metafields.custom.colorvariant }}"
-                {% if option.selected_value == value %}
-                  checked
-                {% endif %}
-                {% if option_disabled %}
-                  class="disabled"
-                {% endif %}
-              >
-              <label for="{{ input_id }}">
-                {{ variant.metafields.custom.colorvariant }}
-                {{ label_unavailable }}
-              </label>
-          {%  endif %}
-      {% endfor %}
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       value="{{ value | escape }}"
@@ -143,3 +123,24 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.colorvariant  %}
+        <input
+          type="radio"
+          id="{{ input_id }}"
+          name="{{ option.name }}"
+          value="{{ variant.metafields.custom.colorvariant }}"
+          {% if option.selected_value == value %}
+            checked
+          {% endif %}
+          {% if option_disabled %}
+            class="disabled"
+          {% endif %}
+        >
+        <label for="{{ input_id }}">
+          {{ variant.metafields.custom.colorvariant }}
+          {{ label_unavailable }}
+        </label>
+    {%  endif %}
+{% endfor %}
