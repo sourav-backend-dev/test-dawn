@@ -102,7 +102,7 @@
           <img src="{{ variant.metafields.custom.variant_image | img_url }}" height="50px" width="50px" style="border-radius:50%;">
         {% endif %}
       {% endfor %}
-      {{ value -}}
+    
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
