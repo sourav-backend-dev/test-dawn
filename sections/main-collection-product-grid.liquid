@@ -28,6 +28,35 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
+    <div class="select">
+      {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+      {% for tag in collection.all_types %}
+        {%- if current_tags contains tag -%}
+          {{ tag }}
+        {%- else -%}
+          {{ tag | link_to_add_tag: tag }}
+        {%- endif -%}
+      {% endfor %}
+      <select
+        name="sort_by"
+        class="facet-filters__sort select__select caption-large"
+        id="SortBy"
+        aria-describedby="a11y-refresh-page-message"
+      >
+        {%- for option in collection.sort_options -%}
+          <option
+            value="{{ option.value | escape }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name | escape }}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+
     {% for tag in collection.all_tags %}
       {%- if current_tags contains tag -%}
         {{ tag }}
