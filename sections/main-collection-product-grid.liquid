@@ -25,6 +25,13 @@
     }
   }
 {%- endstyle -%}
+{% for tag in collection.all_tags %}
+  {%- if current_tags contains tag -%}
+    {{ tag }}
+  {%- else -%}
+    {{ tag | link_to_add_tag: tag }}
+  {%- endif -%}
+{% endfor %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
