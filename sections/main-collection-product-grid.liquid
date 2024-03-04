@@ -28,7 +28,7 @@
     <div class="select">
       <select>
         {% for collection in collections %}
-          <option value="{{- collection.title}}">
+          <option>
             {{- collection.title | link_to: collection.url }}
           </option>
         {% endfor %}
