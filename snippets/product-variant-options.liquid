@@ -99,10 +99,11 @@
     <label for="{{ input_id }}">
       {{ value -}}
       {{ label_unavailable }}
-       {% if variant.metafields.custom.variant_image %}
+      {% for variant in product.variants %}
+        {% if {{ variant.metafields.custom.variant_name }} ==  {{ value }}%}
           <img src="{{ variant.metafields.custom.variant_image | img_url }}">
-          <p>{{ variant.metafields.custom.variant_name }}</p>
         {% endif %}
+      {% endfor %}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
