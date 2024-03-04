@@ -131,7 +131,7 @@
 
             
 <div class="related-products-wrapper">
-  {%assign related_products = product.metafields.related_products.product_list.value %}
+  {%assign related_products = product.variant.metafields.custom.productmetafield.value %}
    {% if related_products %}
     <h3>You might also like:</h3>
      <div class = "related-product-list">
