@@ -128,9 +128,8 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-              {% if variant.metafields.custom.variant_image != blank %}
-                hlo
-              {% endif %}
+            
+            {{ product.metafields.my_fields.custom.variant_image | img_tag }}
 
             
             {%- when 'inventory' -%}
