@@ -26,16 +26,18 @@
   }
 {%- endstyle -%}
     
-        {% for collection in collections %}
+        
           <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown button
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% for collection in collections %}
         {{ collection.title | link_to: collection.url }}
+        {% endfor %}
       </div>
     </div>
-        {% endfor %}
+        
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
