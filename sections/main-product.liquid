@@ -132,10 +132,11 @@
               {% comment %} custom image meatfield  {% endcomment %}
               {% for variant in product.variants %}
               {% if variant.metafields.custom.productmetafield %}
+                {{ variant.metafields.custom.productmetafield.value }}
                 {%- assign product_list = variant.metafields.custom.productmetafield | split: ',' | uniq -%}
               {% endif %}
               {% endfor %}
-              {{ product_list.value }}
+              {{ product_list.size }}
             
             {%- when 'inventory' -%}
               <p
