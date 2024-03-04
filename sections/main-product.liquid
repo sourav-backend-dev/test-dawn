@@ -131,7 +131,7 @@
               {% for variant in product.variants %}
               {% if variant.metafields.custom.variant_image %}
                 {{ variant.metafields.custom.variant_image }}
-              <img src="{{ variant.metafields.custom.variant_image | img_url: '150x150' }}">
+              <img src="{{ variant.metafields.custom.variant_image}}">
               {% endif %}
               {% endfor %}
             
