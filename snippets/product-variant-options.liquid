@@ -83,12 +83,11 @@
       help_text: label_unavailable
     %}
   {%- elsif picker_type == 'button' -%}
-    tgrthwrth
     <input
       type="radio"
       id="{{ input_id }}"
       name="{{ option.name }}"
-      value="{{ value | escape }}"
+      value="{{ value | escape }} hello"
       form="{{ product_form_id }}"
       {% if option.selected_value == value %}
         checked
