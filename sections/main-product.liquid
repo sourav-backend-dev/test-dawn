@@ -135,7 +135,17 @@
    {% if related_products %}
     <h3>You might also like:</h3>
      <div class = "related-product-list">
-      {% for related_product in related_products %}
+      
+     </div>
+   {%endif%}
+</div>
+
+            
+              {% comment %} custom image meatfield  {% endcomment %}
+              {% for variant in product.variants %}
+              {% if variant.metafields.custom.productmetafield %}
+                {%assign related_products = variant.metafields.custom.productmetafield.value %}
+                {% for related_product in related_products %}
        <a href = "{{shop.url | append: "/products/" | append: related_product.handle }}">
         <div class = "related-product">
          <div class = "related-product-image">
@@ -146,16 +156,6 @@
         </div>
        </a>
       {% endfor %}
-     </div>
-   {%endif%}
-</div>
-
-            
-              {% comment %} custom image meatfield  {% endcomment %}
-              {% for variant in product.variants %}
-              {% if variant.metafields.custom.productmetafield %}
-                {%assign related_products = variant.metafields.custom.productmetafield.value %}
-                {%- assign product_list = variant.metafields.custom.productmetafield | split: ',' | uniq -%}
               {% endif %}
               {% endfor %}
               {{ product_list.size }}
