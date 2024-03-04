@@ -129,7 +129,7 @@
                 {%- endform -%}
               </div>
             
-            {{ product.metafields.my_fields.custom.variant_image | img_tag }}
+            {{ product.metafields.my_fields.custom.variant_image | img_url : '150x150'}}
 
             
             {%- when 'inventory' -%}
