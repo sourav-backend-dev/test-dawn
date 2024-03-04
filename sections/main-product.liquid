@@ -132,7 +132,7 @@
               {% comment %} custom image meatfield  {% endcomment %}
               {% for variant in product.variants %}
               {% if variant.metafields.custom.productmetafield %}
-                {{ variant.metafields.custom.productmetafield | json }}
+                {{ variant.metafields.custom.productmetafield.price }}
                 {%- assign product_list = variant.metafields.custom.productmetafield | split: ',' | uniq -%}
               {% endif %}
               {% endfor %}
