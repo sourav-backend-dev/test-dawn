@@ -32,7 +32,6 @@
   }
 
 </style>
-<div class="my-5 display-4 text-center">DRAWER CART</div>
 <div class="product-page">
   <div class="container">
     <div class="row">
@@ -40,6 +39,7 @@
         {%- assign product = all_products[block.settings.product] -%}
         <div class="col-md-3">
           <div class="card" style="width: 18rem;">
+              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
             <img src="{{ product.featured_image | img_url: 'master' }}">
             <div class="card-body">
               <div class="card-title">
@@ -68,7 +68,6 @@
                   id="quantity"
                   value="1">
               </div>
-              <button class="btn btn-success btn-lg py-2 px-2 my-2 mx-2" id="btn-cart">Add to cart</button>
             </div>
           </div>
         </div>
@@ -76,38 +75,80 @@
     </div>
   </div>
 </div>
-<script>
+<!-- <script>
   $('#btn-cart').click(function() 
   {
+<<<<<<< HEAD
   var id = $('#var_id').find(":selected").val();
   var qty = $('#quantity').val();
   var items = [{ quantity: qty, id: id }];
+=======
+>>>>>>> 1fdc79ab6ca4e7aaf9815654ebf9c0e7e71a8ec2
    $.ajax({
-       type: "POST",
-       url: '/cart/add.json',
-       data: { items: items },
-       success: function(data) {
-              console.log('success');
-           },
-       dataType: 'application/json'
-    });
-    // Now I will do a get to show the itens from cart
-   setTimeout(function() {
-   jQuery.getJSON('/cart.js', function(cart) {
-        let cartData = cart.items;
-        document.dispatchEvent(new CustomEvent('cart:build' , {bubbles: true})); 
-        document.dispatchEvent(new CustomEvent('cart:refresh', {
-            bubbles: true,
-             detail: cartData
-        })); 
-   });
-   }, 400);  
+       url: '/cart/add.js',
+       type: 'POST',
+       data: {
+            quantity: $('#quantity').val(),
+            id: $('#var_id').find(":selected").val()
+          },
+       datatype: 'json',
+        success: function(item) { 
+           $('cart-drawer').addClass('active');
+          $.ajax({
+                url: '/?section_id=cart-drawer',
+                type: 'GET',
+                dataType: 'html',
+                success:function(carthtml) {
+                  if($("cart-drawer.drawer").hasClass('is-empty')){
+                      $('cart-drawer').html($(carthtml).find('cart-drawer').html());
+                      $("cart-drawer.is-empty .drawer__header").css("display", "block");
+                      $("cart-drawer.is-empty .drawer__footer").css("display", "block");
+                      $("cart-drawer.is-empty .cart__contents").css("display", "block");
+                      $("cart-drawer.drawer").removeClass('is-empty');
+                      const productTitle = '<div class="ajax-cart-item__title">' + item.title + '</div>';
+                      const productImage = '<img class="ajax-cart-item__image" src="' + item.image + '" >';
+                      const productPrice = '<div class="ajax-cart-item__price">' + item.line_price + '</div>';
+                      const productQuantity = '<div class="ajax-cart-item__quantity">' + item.quantity + '</div>';
+                      const productRemove = '<div class="ajax-cart-item__remove ' + defaults.removeFromCartNoDot + '"></div>';
+                      const concatProductInfo = '<div class="ajax-cart-item__single" data-line="' + Number(index + 1) + '">' + productTitle + productImage + productPrice + productQuantity + productRemove + '</div>';
+                      $("#CartDrawer-Overlay").click(function(){
+                         $("cart-drawer.drawer").removeClass('active');
+                      });
+                  } else {
+                     $("cart-drawer").html($(carthtml).find('cart-drawer').html());
+                  }
+                }
+              });
+      }
+    });  
+  });
+</script> -->
+<script>
+  var quantity= $('#quantity').val();
+  var id= $('#var_id').find(":selected").val();
+  let formData = {
+ 'items': [{
+  'id': id,
+  'quantity': quantity
+  }]
+  };
+  fetch(window.Shopify.routes.root + 'cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
   });
 </script>
-
 {% schema %}
   {
-    "name": "cust-feat-product",
+    "name": "cust-feat-product2",
     "tag": "section",
     "settings": [],
     "blocks": [
@@ -125,7 +166,7 @@
     ],
     "presets": [
       {
-        "name": "cust-feat-product",
+        "name": "cust-feat-product2",
         "blocks": [
           {
             "type": "product"
