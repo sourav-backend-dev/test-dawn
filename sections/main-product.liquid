@@ -128,10 +128,9 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-
             
 <div class="related-products-wrapper">
-  {%assign related_products = product.variants.metafields.custom.productmetafield.value %}
+  {%assign related_products = product.variants.metafields.custom.productmetafield %}
   {{ related_products }}
    {% if related_products %}
     <h3>You might also like:</h3>
