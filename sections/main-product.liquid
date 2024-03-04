@@ -76,6 +76,7 @@
         data-section="{{ section.id }}"
         data-url="{{ product.url }}"
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+        style="background-color:blue"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
