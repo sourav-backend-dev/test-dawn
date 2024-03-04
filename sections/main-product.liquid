@@ -64,7 +64,6 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-hello how are you !
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -129,6 +128,16 @@ hello how are you !
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+
+              {% comment %}
+              {% for variant in product.variants %}
+              {% if variant.metafields.custom.variant_image %}
+              <img src="{{ variant.metafields.custom.variant_image | img_url }}">
+              <p>{{ variant.metafields.custom.variant_name }}</p>
+              {% endif %}
+              {% endfor %}
+              {% endcomment %}
+            
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -680,6 +689,7 @@ hello how are you !
   "class": "section",
   "blocks": [
     {
+      "name" : "blocks",
       "type": "@app"
     },
     {
