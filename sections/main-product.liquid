@@ -129,15 +129,25 @@
                 {%- endform -%}
               </div>
 
+            
               {% comment %} custom image meatfield  {% endcomment %}
-              {% comment %}
               {% for variant in product.variants %}
-              {% if variant.metafields.custom.variant_image %}
-              <img src="{{ variant.metafields.custom.variant_image | img_url }}">
-              <p>{{ variant.metafields.custom.variant_name }}</p>
+              {% if variant.metafields.custom.productmetafield %}
+                {%assign related_products = variant.metafields.custom.productmetafield.value %}
+                {% for related_product in related_products %}
+                 <a href = "{{shop.url | append: "/products/" | append: related_product.handle }}">
+                  <div class = "related-product">
+                   <div class = "related-product-image">
+                     <img src = "{{related_product.featured_image | img_url: '150x150' }}" />
+                    </div>
+                   <div class = "related-product-name">{{related_product.title}}</div>
+                   <div class = "related-product-price">{{related_product.price | money}}</div>
+                  </div>
+                 </a>
+                {% endfor %}
               {% endif %}
               {% endfor %}
-              {% endcomment %}
+              {{ product_list.size }}
             
             {%- when 'inventory' -%}
               <p
@@ -421,7 +431,6 @@
                 block: block,
                 share_link: share_url
               %}
-
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               <p>Choose Color</p>
