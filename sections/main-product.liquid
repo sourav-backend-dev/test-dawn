@@ -429,8 +429,6 @@
                 {% if variant.metafields.custom.colorvariant  %}
                       <input
                         type="hidden"
-                        id="{{ variant.metafields.id }}"
-                        name="{{ option.name }}"
                         value="{{ variant.metafields.custom.colorvariant }}"
                         {% if option.selected_value == value %}
                           checked
