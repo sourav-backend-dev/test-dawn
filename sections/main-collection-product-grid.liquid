@@ -31,11 +31,7 @@
     <div class="select">
       {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
       {% for tag in collection.all_types %}
-        {%- if current_tags contains tag -%}
-          {{ tag }}
-        {%- else -%}
-          {{ tag | link_to_add_tag: tag }}
-        {%- endif -%}
+        {{ tag }}
       {% endfor %}
       <select
         name="sort_by"
