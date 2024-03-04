@@ -427,7 +427,7 @@
               
               {% for variant in product.variants %}
                 {% if variant.metafields.custom.colorvariant  %}
-                  <div class="btn" style="background-color:{{ variant.metafields.custom.colorvariant }}"></div>
+                  <div class="btn" style="background-color:{{ variant.metafields.custom.colorvariant }}">color</div>
                 {%  endif %}
               {% endfor %}
             {%- when 'buy_buttons' -%}
