@@ -131,9 +131,9 @@
 
               {% comment %} custom image meatfield  {% endcomment %}
               {% for variant in product.variants %}
-              {% for product in variant.metafields.custom.productmetafield %}
-                {{ product.title }}
-                 {% endfor %}
+                {% for product in variant.metafields.custom.productmetafield %}
+                  {{ product }}
+                {% endfor %}
               {% endfor %}
 
 
