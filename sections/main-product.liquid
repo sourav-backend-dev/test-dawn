@@ -135,8 +135,7 @@
                 {%- assign product_list = variant.metafields.custom.productmetafield | split: ',' | uniq -%}
               {% endif %}
               {% endfor %}
-{{ product_list.size }}
-fghrt
+              {{ product_list.size }}
             
             {%- when 'inventory' -%}
               <p
