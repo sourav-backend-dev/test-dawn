@@ -128,7 +128,8 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-              {% comment %} custom image meatfield  {% endcomment %}
+
+            {% comment %} custom image meatfield  {% endcomment %}
               {% comment %}
               {% for variant in product.variants %}
               {% if variant.metafields.custom.variant_image %}
@@ -689,7 +690,6 @@
   "class": "section",
   "blocks": [
     {
-      "name" : "blocks",
       "type": "@app"
     },
     {
