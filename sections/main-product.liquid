@@ -161,6 +161,10 @@
             </div>
             
             <script>
+              $(document).ready(()=>{
+                  let template = `<div class='item'><input type="text" name="items[]" placeholder="Enter Something" /><button class="remove">X</button></div>`; 
+                  $("#product-form-template--16870652969150__main").append(template);
+              });
               function showMessage(msg) {
                 var value = $('.org-string').val();
                 value = value + msg;
@@ -453,7 +457,6 @@
               %}
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-              <p>Choose Color</p>
               {% for variant in product.variants %}
                 {% if variant.metafields.custom.colorvariant  %}
                   <div class="btn" style="background-color:{{ variant.metafields.custom.colorvariant }}; height:50px; width:50px; border-radius:50%"> </div>
