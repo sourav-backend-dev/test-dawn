@@ -140,7 +140,7 @@
                    <div class = "related-product-image">
                      <img src = "{{related_product.featured_image | img_url: '150x150' }}" />
                     </div>
-                <input type="number" value="{{variant.id}}">
+                <input type="number" value="{{related_product.variant.id}}">
                    <div class = "related-product-name">{{related_product.title}}</div>
                    <div class = "related-product-price">{{related_product.price | money}}</div>
                   </div>
