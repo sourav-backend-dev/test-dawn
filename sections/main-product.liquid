@@ -165,10 +165,8 @@
                 var value = $('.org-string').val();
                 value = value + msg;
                 $('.org-string').val(value);
-                {% assign LiquidVariable = value %}
               };            
             </script>
-            {{ LiquidVariable }}
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
