@@ -199,7 +199,22 @@
                                   </div>
                                 {%- endif -%}
                               {%- endfor -%}
-                            </dl>gggggggggggggggggggggggggg
+                            </dl>
+                            {% for item in cart.items %}
+  <!-- line item info -->
+
+  {% unless item.properties == empty %}
+    {% for property in item.properties %}
+      {{ property.first }}:
+
+      {% if property.last contains '/uploads/' %}
+        <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+      {% else %}
+        {{ property.last }}
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+{% endfor %}
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                           {%- endif -%}
 
