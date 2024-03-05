@@ -1,5 +1,8 @@
 {
   "current": {
+    "swatchType": "color",
+    "swatchColors": "Black:#000000\nWhite:#f5f5f5\nBlue:#005eff\nRed:img.jpg\nPink:#ffd5e6\nBrown:#a2896b\nOlive:#808000\nGreenRed:#008000#c9002c\nGreenRedBlue:#008000#c9002c#005eff\nBlueBrownOrange:red-bean.jpg",
+    "swatchStyle": "square-round-corners",
     "logo_width": 90,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
@@ -134,17 +137,6 @@
     "content_for_index": [
 
     ],
-    "blocks": {
-      "16250556887416161327": {
-        "type": "shopify:\/\/apps\/easy-appointment-booking\/blocks\/select_time\/cc7b690c-65b5-4bb4-a46c-1e4bd73e1c12",
-        "disabled": false,
-        "settings": {
-          "buttonTextAlign": "center",
-          "classNames": "button",
-          "buttonWidth": 100
-        }
-      }
-    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
