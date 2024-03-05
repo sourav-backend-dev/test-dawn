@@ -164,7 +164,7 @@
               $(document).ready(()=>{
                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
                   let template = `<input type="text" class="org-str" name="properties[Extra Text]" value="xyz">`; 
-                  $("#product-form-template--16870652969150__main").append(template);
+                  $("#product-form-template--16870652969150__main").append($(".org-string").clone());
                   console.log("qrekfd");
                 })
               });
