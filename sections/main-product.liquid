@@ -154,13 +154,11 @@
               <input type="text" class="org-string"  onclick="changeValue()" >
             </div>
             <script>
-              $(document).ready(function(){
-                function showMessage(msg)    {  
+              showMessage(msg)    {  
                   var value = $('.org-string').val();
                   value = value + msg;
                   $('.org-string').prop("value",value); 
                   }
-              }
             </script>
             <div>
               <input type="button" value="X" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
