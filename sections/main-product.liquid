@@ -168,13 +168,13 @@
                 <label class="btn btn-secondary btn-outline-danger" for="option2">Radio 2</label>
                 <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Radio 3">
                 <label class="btn btn-secondary btn-outline-danger" for="option3">Radio 3</label>
-                <input type="hidden" class="getvalue">
+                <input type="hidden" class="getvalue" name="properties[Radio Button]">
               </div>
 
             <script>
               $(document).ready(()=>{
                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
-                  $(".getvalue").val($(".btn-check:checked"));
+                  $(".getvalue").val($(".btn-check:checked").val());
                   $("#product-form-template--16870652969150__main").append($(".org-str").clone());
                   $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
                 })
