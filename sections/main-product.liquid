@@ -160,18 +160,23 @@
               <input type="button" value="Y" onclick="showMessage('Y');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="Z" onclick="showMessage('Z');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
             </div>
+
               <div>
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-                <label class="btn btn-secondary" for="option2">Radio 1</label>
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                <label class="btn btn-secondary" for="option2">Radio 2</label>
-                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                <label class="btn btn-secondary" for="option2">Radio 3</label>
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="Radio 1">
+                <label class="btn btn-secondary btn-outline-danger" for="option1">Radio 1</label>
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" value="Radio 2" checked>
+                <label class="btn btn-secondary btn-outline-danger" for="option2">Radio 2</label>
+                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Radio 3">
+                <label class="btn btn-secondary btn-outline-danger" for="option3">Radio 3</label>
+                <input type="hidden" class="getvalue">
               </div>
+
             <script>
               $(document).ready(()=>{
                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
+                  $(".getvalue").val($(".btn-check:checked"));
                   $("#product-form-template--16870652969150__main").append($(".org-str").clone());
+                  $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
                 })
               });
               function showMessage(msg) {
