@@ -199,10 +199,7 @@
                                   </div>
                                 {%- endif -%}
                               {%- endfor -%}
-                              
-                              <script>
-                                console.log("88888888888");
-                              </script>
+                              {{ cart.attributes["value_string"] }}
                             </dl>
 
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
