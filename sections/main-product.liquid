@@ -129,10 +129,6 @@
                   
                 {%- endform -%}
               </div>
-              <div>
-                <input type="text" class="org-string" >
-                <input type="text" class="org-str" type="hidden" name="properties[Extra text]">
-              </div>
             {% comment %} custom image meatfield  
               {% for variant in product.variants %}
                 
@@ -154,6 +150,10 @@
               {{ product_list.size }}
             {% endcomment %}
             
+              <div>
+                <input type="text" class="org-string" >
+                <input type="text" class="org-str" type="hidden" name="properties[Extra text]">
+              </div>
             <div>
               <input type="button" value="A" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="X" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
