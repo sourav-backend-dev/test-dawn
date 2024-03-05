@@ -151,8 +151,8 @@
             {% endcomment %}
             
               <div>
-                <input type="text" class="org-string" >
-                <input class="org-str" type="hidden" name="properties[Extra text]">
+                <input type="text" class="org-string">
+                <input class=".gettextvalue" type="hidden" name="properties[Extra text]">
               </div>
             <div>
               <input type="button" value="A" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
@@ -175,6 +175,7 @@
               $(document).ready(()=>{
                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
                   $(".getvalue").val($(".btn-check:checked").val());
+                  $(".gettextvalue").val($(".org-string").val());
                   $("#product-form-template--16870652969150__main").append($(".org-str").clone());
                   $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
                 })
@@ -183,7 +184,6 @@
                 var value = $('.org-string').val();
                 value = value + msg;
                 $('.org-string').val(value);
-                $('.org-str').val(value);
               };
             </script>
 
