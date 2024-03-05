@@ -151,7 +151,7 @@
             {% endcomment %}
             
               <div>
-                <input type="text" class="org-string" maxlength="5">
+                <input type="text" class="org-string">
                 <input type="hidden" class="gettextvalue" name="properties[Extra text]">
               </div>
             <div>
@@ -183,8 +183,6 @@
               function showMessage(msg) {
                 var value = $('.org-string').val();
                 value = value + msg;
-                $('.org-string').val(value);
-              };
             </script>
 
             
