@@ -164,7 +164,7 @@
               
               $(".extra-btn").click(function(event) { 
                   var value = $('.org-string').val();
-                  value = value + $('.extra-btn').val();
+                  value = value + this.val();
                   $('.org-string').prop("value",value); 
               });
               
