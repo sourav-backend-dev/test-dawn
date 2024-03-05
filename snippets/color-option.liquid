@@ -46,7 +46,6 @@
         border-radius: 5px;
   }
   .product-form__input input[type='radio'] + label.color-swatch{
-    border:1px rgb(214,214,214) solid;
     width: {{swatchSize}}px;
     height: {{swatchSize}}px;
     background-repeat: no-repeat;
@@ -72,9 +71,7 @@
     height: 100%;
     z-index: 1;
     {%- if settings.dark or swatchType == "variantImage" -%}
-       border: none;
-    {%- else -%}    
-      border: 3px rgb(255 255 255) solid;
+       border: none; 
     {%- endif -%}
   }
   .product-form__input input[type='radio'] + label.color-swatch:hover:before{
