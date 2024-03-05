@@ -30,6 +30,15 @@
 -%}
 
 <style>
+.product-form__input input[type='radio'] + label.color-swatch{
+        border-radius: 0;
+}
+.product-form__input input[type='radio'] + label.color-swatch.round{
+    border-radius: 100%;
+  }
+.product-form__input input[type='radio'] + label.color-swatch.round-corners{
+        border-radius: 5px;
+  }
   .product-form__input input[type='radio'] + label.color-swatch{
     border:1px rgb(214,214,214) solid;
     width: {{swatchSize}}px;
