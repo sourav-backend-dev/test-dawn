@@ -104,7 +104,7 @@
   -%}
 
   {%- if block.settings.picker_type == 'button' -%}
-    <input
+    <input style="display:none;"
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       name="{{ option.name }}"
