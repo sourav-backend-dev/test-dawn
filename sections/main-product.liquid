@@ -162,8 +162,10 @@
 
             <script>
               
-              $(".extra-btn").click(function(event) {console.log(this); 
-                  $('.org-string').prop("value","jbjkb"); 
+              $(".extra-btn").click(function(event) { 
+                  var value = $('.org-string').val();
+                  value = value + $('.extra-btn').val();
+                  $('.org-string').prop("value",value); 
               });
               
             
