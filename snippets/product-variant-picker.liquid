@@ -20,7 +20,8 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
-    <fieldset class="js product-form__input">
+    {%- for option in product.options_with_values -%}
+      <fieldset class="js product-form__input">
             {%- liquid
                 assign optionNames = settings.optionName | split:","
                 assign useColor = false 
@@ -39,6 +40,7 @@
             {% render 'product-variant-options', product: product, option: option, block: block %}
           {%- endif -%}
           </fieldset>
+    {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
     </script>
