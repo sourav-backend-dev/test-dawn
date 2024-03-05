@@ -132,7 +132,7 @@
             
               {% comment %} custom image meatfield  {% endcomment %}
               {% for variant in product.variants %}
-                <input type="number" value="{{variant.id}}">
+                
               {% if variant.metafields.custom.productmetafield %}
                 {%assign related_products = variant.metafields.custom.productmetafield.value %}
                 {% for related_product in related_products %}
@@ -140,7 +140,7 @@
                   <div class = "related-product">
                    <div class = "related-product-image">
                      <img src = "{{related_product.featured_image | img_url: '150x150' }}" />
-                    </div>
+                    </div><input type="number" value="{{variant.id}}">
                    <div class = "related-product-name">{{related_product.title}}</div>
                    <div class = "related-product-price">{{related_product.price | money}}</div>
                   </div>
