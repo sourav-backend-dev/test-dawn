@@ -152,29 +152,24 @@
             {% endcomment %}
 
 
-<input type="button" value="ahaha" onclick="showMessage('msg');" />
+<input type="button" value="ahaha" />
             
             <div>
-              <input type="text" class="org-string"  onclick="changeValue()" >
+              <input type="text" class="org-string" >
             </div>
             <div>
-              <input type="button" value="X" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Y" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Z" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="A" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="X" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="Y" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="Z" onclick="showMessage('Y');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="A" onclick="showMessage('Z');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
             </div>
 
             <script>
               function showMessage(msg) {
-                $('.org-string').val(msg);
-              };
-              $(".extra-btn").click(function(event) { 
-                  var value = $('.org-string').val();
-                  value = value + $('.org-string').val();
-                  $('.org-string').prop("value",value); 
-              });
-              
-            
+                var value = $('.org-string').val();
+                value = value + $('.org-string').val();
+                $('.org-string').val(value);
+              };            
             </script>
             {%- when 'inventory' -%}
               <p
