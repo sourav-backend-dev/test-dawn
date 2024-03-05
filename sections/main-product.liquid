@@ -130,7 +130,8 @@
                 {%- endform -%}
               </div>
               <div>
-                <input type="text" class="org-string" name="properties[kuch bhi]">
+                <input type="text" class="org-string" >
+                <input type="text" class="org-str" type="hidden" name="properties[Extra text]">
               </div>
             {% comment %} custom image meatfield  
               {% for variant in product.variants %}
@@ -163,9 +164,7 @@
             <script>
               $(document).ready(()=>{
                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
-                  let template = `<input type="text" class="org-str" name="properties[Extra Text]" value="xyz">`; 
-                  $("#product-form-template--16870652969150__main").append($(".org-string").clone());
-                  console.log("qrekfd");
+                  $("#product-form-template--16870652969150__main").append($(".org-str").clone());
                 })
               });
               function showMessage(msg) {
