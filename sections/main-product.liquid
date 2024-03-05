@@ -166,8 +166,9 @@
 
             <script>
               function showMessage(msg) {
-   alert(msg);
-};
+                $('.org-string').val(msg);
+                 alert(msg);
+              };
               $(".extra-btn").click(function(event) { 
                   var value = $('.org-string').val();
                   value = value + $('.org-string').val();
