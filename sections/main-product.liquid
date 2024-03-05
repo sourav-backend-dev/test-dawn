@@ -126,6 +126,9 @@
                 {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   {{ form | payment_terms }}
+                  <div>
+              <input type="text" class="org-string" name="properties[kuch bhi]" form="cart" >
+            </div>
                 {%- endform -%}
               </div>
 
@@ -150,13 +153,6 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
-
-            
-
-            
-            <div>
-              <input type="text" class="org-string" name="properties[kuch bhi]" form="cart" >
-            </div>
             <div>
               <input type="button" value="A" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="X" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
