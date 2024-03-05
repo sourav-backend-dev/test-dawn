@@ -74,9 +74,6 @@
        border: none; 
     {%- endif -%}
   }
-  .product-form__input input[type='radio'] + label.color-swatch:hover:before{
-    border: 1px rgb(125 124 124) solid;
-  }
   .product-form__input input[type='radio']:checked + label.color-swatch:before{
   {%- if settings.dark -%}
     box-shadow: 0 0 0 2px rgb(var(--color-foreground));
