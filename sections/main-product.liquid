@@ -150,6 +150,10 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
+
+
+<input type="button" value="ahaha" onclick="showMessage('msg');" />
+            
             <div>
               <input type="text" class="org-string"  onclick="changeValue()" >
             </div>
@@ -161,7 +165,9 @@
             </div>
 
             <script>
-              
+              function showMessage(msg) {
+   alert(msg);
+};
               $(".extra-btn").click(function(event) { 
                   var value = $('.org-string').val();
                   value = value + $('.org-string').val();
