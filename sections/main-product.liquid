@@ -152,12 +152,14 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
+            
             <div>
               <input type="button" value="A" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="X" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="Y" onclick="showMessage('Y');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
               <input type="button" value="Z" onclick="showMessage('Z');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
             </div>
+            
             <script langauge="javascript">
               function showMessage(msg) {
                 var value = $('.org-string').val();
@@ -165,6 +167,8 @@
                 $('.org-string').val(value);
               };            
             </script>
+
+            
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
