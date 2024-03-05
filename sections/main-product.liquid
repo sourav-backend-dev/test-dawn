@@ -161,11 +161,13 @@
             </div>
 
             <script>
-              function showMessage(msg) {
-                var value = document.getElementByClass(".org-string").value;
-                value = value + msg;
-                $('.org-string').prop("value",value); 
-              });
+              $(document).ready(function(){
+                function myfunction(msg)    {  
+                  var value = $('.org-string').val();
+                  value = value + msg;
+                  $('.org-string').prop("value",value); 
+                  }
+                }
               
             
             </script>
