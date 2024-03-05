@@ -150,13 +150,22 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
-
             <div>
-              <input type="button" value="X" class="extra-btn btn btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Y" class="extra-btn btn btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Z" class="extra-btn btn btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="A" class="extra-btn btn btn-danger my-2 px-2 py-2 mx-3">
+              <input type="text" class="org-string"  onclick="changeValue()" >
             </div>
+            <div>
+              <input type="button" value="X" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="Y" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="Z" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+              <input type="button" value="A" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
+            </div>
+
+            <script>
+              $(".extra-btn").click(function(event) { 
+                  $('.org-string').prop("value", $('.extra-btn').val()); 
+              });
+              
+            </script>
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
