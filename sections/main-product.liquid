@@ -162,8 +162,11 @@
             
             <script>
               $(document).ready(()=>{
-                  let template = `<input type="text" class="org-str" name="properties[kuch bhi]" value="xyz">`; 
+                $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
+                  let template = `<input type="text" class="org-str" name="properties[Extra Text]" value="xyz">`; 
                   $("#product-form-template--16870652969150__main").append(template);
+                  console.log("qrekfd");
+                })
               });
               function showMessage(msg) {
                 var value = $('.org-string').val();
