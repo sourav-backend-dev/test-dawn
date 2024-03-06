@@ -151,8 +151,10 @@
             {% endcomment %}
             
             <div>
-             {% for product in collections.all.products limit: 4 %} 
+             {% for product in collections.all.products %} 
+               {%  if product.tag == "custom-product" %}
                    <li>{{ product.id }}</li>
+                 {% endif %}
              {% endfor %}
             </div>
             
