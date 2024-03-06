@@ -151,10 +151,9 @@
             {% endcomment %}
             
             <div>
-              <div>
-                {{ collections.all  }}
-                <input type="text" placeholder="Enter Something" id="extra_txt">
-              </div>
+             {% for product in collections.shop_name.products limit: 4 %}     /*********** shop_name is collections name limit is used to show no. of products ******/
+                   <li><a href="{{ product.url}}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt=""></a></li>
+             {% endfor %}
             </div>
             
               <!-- <div>
