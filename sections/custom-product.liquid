@@ -153,8 +153,8 @@
             <div>
              {% for product in collections.all.products %} 
                {%  if product.type == "custom-product" %}
-                   <li>{{ product.id }}</li>
-                 {% endif %}
+                 {% assign my_variable = product.id %}
+               {% endif %}
              {% endfor %}
             </div>
             
