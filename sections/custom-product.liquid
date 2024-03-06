@@ -149,8 +149,10 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
+            
             <div>
               <div>
+                {{ product | json }}
                 <input type="text" placeholder="Enter Something" id="extra_txt">
               </div>
             </div>
