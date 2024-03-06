@@ -152,7 +152,7 @@
             
             <div>
              {% for product in collections.all.products %} 
-               {%  if product.tag == "custom-product" %}
+               {%  if product.type == "custom-product" %}
                    <li>{{ product.id }}</li>
                  {% endif %}
              {% endfor %}
