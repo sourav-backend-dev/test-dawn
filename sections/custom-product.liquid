@@ -152,7 +152,7 @@
             
             <div>
              {% for product in collections.all.products limit: 4 %} 
-                   <li><a href="{{ product.url}}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt=""></a></li>
+                   <li>{{ product.id }}</li>
              {% endfor %}
             </div>
             
