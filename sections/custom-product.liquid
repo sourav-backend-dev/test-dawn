@@ -152,9 +152,11 @@
             
              <div>
              {% for product in collections.all.products %} 
-               {%  if product.type == "custom-product" %}
-                 {% assign my_variable = product.variants.id %}
-               {% endif %}
+                 {%  if product.type == "custom-product" %}
+                     {% for variant in product.variants %} 
+                           {% assign my_variable = variant.id %}
+                      {% endfor %}
+                 {% endif %}
              {% endfor %}
              <input type="text" data-id="{{my_variable}}" placeholder="Enter Something">
             </div>
