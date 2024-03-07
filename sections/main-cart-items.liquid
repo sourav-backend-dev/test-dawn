@@ -109,7 +109,7 @@
             {%- assign config_ids = config_ids | slice: 1, config_ids.size -%}
                {%- assign hide_line = false -%}
            
-            {%- if item.product.type == 'Custom Product'  -%}
+            {%- if item.product.type == 'custom-product'  -%}
               {%- assign hide_line = true -%}
             {%- endif -%}
                 
