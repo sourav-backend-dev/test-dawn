@@ -184,18 +184,18 @@
 
             <script>
               $(document).ready(()=>{
-                  let addToCartForm = document.querySelector('form[action$="/cart/add"]');
-                  let formData = new FormData(addToCartForm);
-                  fetch(window.Shopify.routes.root + 'cart/add.js', {
-                    method: 'POST',
-                    body: formData
-                  })
-                  .then(response => {
-                    return response.json();
-                  })
-                  .catch((error) => {
-                    console.error('Error:', error);
-                  });
+                  fetch('/cart/add.js', {
+                    method: "post",
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({
+                        items: [
+                            {
+                                id: 43628344279230,
+                                quantity: 5
+                            }
+                        ]
+                    })
+                })
               });
             </script> 
 
