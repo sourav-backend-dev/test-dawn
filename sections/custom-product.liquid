@@ -187,7 +187,7 @@
              <script>
                $(document).ready(()=>{
                  $("#ProductSubmitButton-template--16904931901630__main").on("click", ()=>{
-                    var proId = $("proId").val();
+                    var proId = $("#proId").val();
                      console.log(proId);
                      fetch('/cart/add.js', {
                        method: "post",
