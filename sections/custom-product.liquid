@@ -156,8 +156,8 @@
                   {%  if product.type == "custom-product" %}
                       {% for variant in product.variants %} 
                             {% assign my_variable = variant.id %}
-                          <input type="text" placeholder="Enter Something">
-                          <input type="hidden" class="proId" name="items[0][id]" value="{{my_variable}}">
+                          <!-- <input type="text" placeholder="Enter Something"> -->
+                          <input type="text" class="proId" name="items[0][id]" value="{{my_variable}}">
                        {% endfor %}
                   {% endif %}
               {% endfor %}
