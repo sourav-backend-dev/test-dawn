@@ -79,23 +79,66 @@
 
               <tbody>
                 {%- for item in cart.items -%}
-                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                    <td class="cart-item__media">
-                      {% if item.image %}
-                        {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                        <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                        <div class="cart-item__image-container gradient global-media-settings">
-                          <img
-                            src="{{ item.image | image_url: width: 300 }}"
-                            class="cart-item__image"
-                            alt="{{ item.image.alt | escape }}"
-                            loading="lazy"
-                            width="150"
-                            height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                          >
-                        </div>
-                      {% endif %}
-                    </td>
+                  
+                  {%- assign config_ids4 = blank -%}
+            {%- assign line_price = blank -%}
+            {%- assign door_id = blank -%}
+           {%- assign reference = item.properties['Reference ID'] -%}
+           
+            
+            
+                {%- assign config_ids = ',' | append: item.id -%}
+               
+                {%- assign line_price = item.final_line_price -%}
+                {%- assign reference_id = item.properties['Reference ID'] -%}
+                
+        		
+                {%- for line_item in cart.items -%}
+                    {%- if item.id == line_item.id -%}{%- continue -%}{%- endif -%}
+                  
+                    {%- if line_item.properties['Reference ID'] == reference_id  -%}
+                        {%- assign line_price = line_price | plus: line_item.final_line_price -%}
+                      
+                        {%- assign config_ids = config_ids | append: ',' | append: line_item.key %}
+             
+                        
+                    {%- endif -%}
+                {%- endfor -%}
+           
+
+            {%- assign config_ids = config_ids | slice: 1, config_ids.size -%}
+               {%- assign hide_line = false -%}
+           
+            {%- if item.product.type == 'Custom Product'  -%}
+              {%- assign hide_line = true -%}
+            {%- endif -%}
+                
+              <tr id='{{ item.id  }}'{% if hide_line %} style="display: none;"{% endif %} class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                <td class="cart-item__media{% if settings.enable_zoom_animation %} image-hover-scaling-up{% endif %}">
+                  {% if item.image %}
+                  <a href="{{ item.url }}" class="image-hover-scaling__image">
+
+                    {%- capture image_ratio -%}
+                    {%- if section.settings.image_ratio == 'auto' -%}
+                    {{ item.image.aspect_ratio }}
+                    {%- else -%}
+                    {{ section.settings.image_ratio }}
+                    {%- endif -%}
+                    {%- endcapture -%}
+
+                    {% assign imagesize = item.image.width | append: 'x' %}
+                    <div class="border__radius" style="--aspect-ratio: {{image_ratio}};">
+                      <img srcset="{{ item.image | img_url: imagesize }} 1x, {{ item.image | img_url: imagesize, scale: 2 }} 2x"
+                           src="{{ item.image | img_url: imagesize }}"
+                           loading="lazy"
+                           width="{{ item.image.width }}"
+                           height="{{ item.image.height }}"
+                           alt="{{ item.image.alt | escape }}"
+                           >
+                    </div>
+                  </a>
+                  {% endif %}
+                </td>
 
                     <td class="cart-item__details">
                       {%- if settings.show_vendor -%}
