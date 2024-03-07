@@ -180,23 +180,24 @@
                 <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Radio 3">
                 <label class="btn btn-lg text-white btn-secondary btn-outline-danger text-white" for="option3">Radio 3</label>
                 <input type="hidden" class="getvalue" name="properties[Radio Button]">
-              </div>
+              </div>-->
 
             <script>
               $(document).ready(()=>{
-                $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
-                  $(".getvalue").val($(".btn-check:checked").val());
-                  $(".gettextvalue").val($(".org-string").val());
-                  $("#product-form-template--16870652969150__main").append($(".gettextvalue").clone());
-                  $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
-                })
+                  let addToCartForm = document.querySelector('form[action$="/cart/add"]');
+                  let formData = new FormData(addToCartForm);
+                  fetch(window.Shopify.routes.root + 'cart/add.js', {
+                    method: 'POST',
+                    body: formData
+                  })
+                  .then(response => {
+                    return response.json();
+                  })
+                  .catch((error) => {
+                    console.error('Error:', error);
+                  });
               });
-              function showMessage(msg) {
-                var value = $('.org-string').val();
-                value = value + msg;
-                $('.org-string').val(value);
-                };
-            </script> -->
+            </script> 
 
             
             
