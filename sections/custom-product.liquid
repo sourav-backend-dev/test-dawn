@@ -150,13 +150,15 @@
               {{ product_list.size }}
             {% endcomment %}
             
-            <div>
+             <div>
              {% for product in collections.all.products %} 
-               {%  if product.type == "custom-product" %}
-                 {% assign my_variable = product.id %}
-               {% endif %}
+                 {%  if product.type == "custom-product" %}
+                     {% for variant in product.variants %} 
+                           {% assign my_variable = variant.id %}
+                      {% endfor %}
+                 {% endif %}
              {% endfor %}
-             <input type="text" data-id="{{my_variable}}" placeholder="Enter Something">
+             <input type="text" name="items[0][id]" data-id="{{my_variable}}" placeholder="Enter Something">
             </div>
             
               <!-- <div>
@@ -178,23 +180,24 @@
                 <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Radio 3">
                 <label class="btn btn-lg text-white btn-secondary btn-outline-danger text-white" for="option3">Radio 3</label>
                 <input type="hidden" class="getvalue" name="properties[Radio Button]">
-              </div>
+              </div>-->
 
             <script>
               $(document).ready(()=>{
-                $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
-                  $(".getvalue").val($(".btn-check:checked").val());
-                  $(".gettextvalue").val($(".org-string").val());
-                  $("#product-form-template--16870652969150__main").append($(".gettextvalue").clone());
-                  $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
+                  fetch('/cart/add.js', {
+                    method: "post",
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({
+                        items: [
+                            {
+                                id: 43628344279230,
+                                quantity: 5
+                            }
+                        ]
+                    })
                 })
               });
-              function showMessage(msg) {
-                var value = $('.org-string').val();
-                value = value + msg;
-                $('.org-string').val(value);
-                };
-            </script> -->
+            </script> 
 
             
             
