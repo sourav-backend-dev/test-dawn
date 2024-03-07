@@ -156,11 +156,11 @@
                   {%  if product.type == "custom-product" %}
                       {% for variant in product.variants %} 
                             {% assign my_variable = variant.id %}
+                          <input type="text" placeholder="Enter Something">
+                          <input type="hidden" class="proId" name="items[0][id]" value="{{my_variable}}">
                        {% endfor %}
                   {% endif %}
               {% endfor %}
-              <input type="text" placeholder="Enter Something">
-              <input type="hidden" id="proId" name="items[0][id]" value="{{my_variable}}">
              </div>
              
     <!--  <div>
@@ -186,7 +186,7 @@
  
              <script>
                $(document).ready(()=>{
-                 var proId = $("#proId").val();
+                 var proId = $(".proId").val();
                    fetch('/cart/add.js', {
                          method: "post",
                          headers: { 'content-type': 'application/json' },
