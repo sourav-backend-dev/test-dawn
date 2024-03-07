@@ -79,7 +79,10 @@
 
               <tbody>
                 {%- for item in cart.items -%}
-                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                  {%- if item.product.type == 'Custom Product'  -%}
+                    {%- assign hide_line = true -%}
+                  {%- endif -%}
+                  <tr class="cart-item" {% if hide_line %} style="display: none;"{% endif %} id="CartItem-{{ item.index | plus: 1 }}">
                     <td class="cart-item__media">
                       {% if item.image %}
                         {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
