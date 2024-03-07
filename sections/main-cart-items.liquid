@@ -79,7 +79,7 @@
 
               <tbody>
                 {%- for item in cart.items -%}
-                  {%- if item.product.type == 'Custom Product'  -%}
+                  {%- if item.product.type == 'custom-product'  -%}
                     {%- assign hide_line = true -%}
                   {%- endif -%}
                   <tr class="cart-item" {% if hide_line %} style="display: none;"{% endif %} id="CartItem-{{ item.index | plus: 1 }}">
