@@ -158,8 +158,7 @@
                             {% assign my_variable = variant.id %}
                             {% assign i = 1 %}
                           <!-- <input type="text" placeholder="Enter Something"> -->
-                          <input type="text" class="proId{{ i }}" name="items[0][id]" value="{{my_variable}}">
-                          {% increment i %}
+                          <input type="text" class="proId{% increment i %}" name="items[0][id]" value="{{my_variable}}">
                        {% endfor %}
                   {% endif %}
               {% endfor %}
