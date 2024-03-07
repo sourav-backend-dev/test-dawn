@@ -186,20 +186,22 @@
  
              <script>
                $(document).ready(()=>{
-                var proId = $("proId").val();
-                 console.log(proId);
-                   fetch('/cart/add.js', {
-                     method: "post",
-                     headers: { 'content-type': 'application/json' },
-                     body: JSON.stringify({
-                         items: [
-                             {
-                                 id: 'proId',
-                                 quantity: 1
-                             }
-                         ]
-                     })
-                 })
+                 $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
+                    var proId = $("proId").val();
+                   console.log(proId);
+                     fetch('/cart/add.js', {
+                       method: "post",
+                       headers: { 'content-type': 'application/json' },
+                       body: JSON.stringify({
+                           items: [
+                               {
+                                   id: 'proId',
+                                   quantity: 1
+                               }
+                           ]
+                       })
+                   })
+                })
                });
              </script> 
  
