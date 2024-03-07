@@ -186,11 +186,12 @@
  
              <script>
                $(document).ready(()=>{
-                 var proId1 = $(".proId1").val();
-                 var proId2 = $(".proId2").val();
+                 var proId1 = $(".proId0").val();
+                 var proId2 = $(".proId1").val();
                  var items = [];
                  items.push({ id: proId1, quantity: 1});
                  items.push({ id: proId2, quantity: 1 });
+                 console.log(items);
                    fetch('/cart/add.js', {
                          method: "post",
                          headers: { 'content-type': 'application/json' },
