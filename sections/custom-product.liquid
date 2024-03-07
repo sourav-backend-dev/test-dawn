@@ -149,57 +149,7 @@
               {% endfor %}
               {{ product_list.size }}
             {% endcomment %}
-            
-             <div>
-             {% for product in collections.all.products %} 
-                 {%  if product.type == "custom-product" %}
-                     {% for variant in product.variants %} 
-                           {% assign my_variable = variant.id %}
-                      {% endfor %}
-                 {% endif %}
-             {% endfor %}
-             <input type="text" name="items[0][id]" data-id="{{my_variable}}" placeholder="Enter Something">
-            </div>
-            
-              <!-- <div>
-                <input type="text" class="org-string">
-                <input type="hidden" class="gettextvalue" name="properties[Extra text]">
-              </div>
-            <div>
-              <input type="button" value="A" onclick="showMessage('A');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="X" onclick="showMessage('X');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Y" onclick="showMessage('Y');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-              <input type="button" value="Z" onclick="showMessage('Z');" class="extra-btn btn btn-lg btn-danger my-2 px-2 py-2 mx-3">
-            </div>
-
-              <div>
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="Radio 1">
-                <label class="btn btn-lg text-white btn-secondary btn-outline-danger" for="option1">Radio 1</label>
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" value="Radio 2" checked>
-                <label class="btn btn-lg text-white btn-secondary btn-outline-danger" for="option2">Radio 2</label>
-                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Radio 3">
-                <label class="btn btn-lg text-white btn-secondary btn-outline-danger text-white" for="option3">Radio 3</label>
-                <input type="hidden" class="getvalue" name="properties[Radio Button]">
-              </div>-->
-
-            <script>
-              $(document).ready(()=>{
-                  fetch('/cart/add.js', {
-                    method: "post",
-                    headers: { 'content-type': 'application/json' },
-                    body: JSON.stringify({
-                        items: [
-                            {
-                                id: 43628344279230,
-                                quantity: 1
-                            }
-                        ]
-                    })
-                })
-              });
-            </script> 
-
-            
+                      
             
             {%- when 'inventory' -%}
               <p
