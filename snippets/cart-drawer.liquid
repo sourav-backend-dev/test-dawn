@@ -114,7 +114,10 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
-                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
+                      {%- if item.product.type == 'custom-product'  -%}
+                        {%- assign hide_line = true -%}
+                      {%- endif -%}
+                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" {% if hide_line %} style="display: none;"{% endif %} class="cart-item" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
