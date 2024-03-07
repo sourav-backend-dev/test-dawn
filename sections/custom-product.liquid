@@ -151,8 +151,6 @@
             {% endcomment %}
             
              <div>
-               {% assign someProduct = all_products[ 'medium-strong-symphony' ] %}
-               {{ someProduct.type }}
              {% for product in collections.all.products %} 
                  {%  if product.type == "custom-product" %}
                      {% for variant in product.variants %} 
