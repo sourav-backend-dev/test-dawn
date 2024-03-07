@@ -186,7 +186,7 @@
  
              <script>
                $(document).ready(()=>{
-                var proId = $("proId").attr("data-id");
+                var proId = $("proId").val();
                  console.log(proId);
                    fetch('/cart/add.js', {
                      method: "post",
