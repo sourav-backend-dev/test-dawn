@@ -195,14 +195,7 @@
                    fetch('/cart/add.js', {
                          method: "post",
                          headers: { 'content-type': 'application/json' },
-                         body: JSON.stringify({
-                             items: [
-                                 {
-                                     id: proId,
-                                     quantity: 1
-                                 }
-                             ]
-                         })
+                         body: JSON.stringify({ items: items })
                      })
                });
              </script> 
