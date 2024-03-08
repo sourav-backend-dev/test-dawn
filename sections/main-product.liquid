@@ -171,21 +171,7 @@
                 <input type="hidden" class="getvalue" name="properties[Radio Button]">
               </div>
 
-            <script>
-              $(document).ready(()=>{
-                $("#ProductSubmitButton-template--16870652969150__main").on("click", ()=>{
-                  $(".getvalue").val($(".btn-check:checked").val());
-                  $(".gettextvalue").val($(".org-string").val());
-                  $("#product-form-template--16870652969150__main").append($(".gettextvalue").clone());
-                  $("#product-form-template--16870652969150__main").append($(".getvalue").clone());
-                })
-              });
-              function showMessage(msg) {
-                var value = $('.org-string').val();
-                value = value + msg;
-                $('.org-string').val(value);
-                };
-            </script>
+        
 
             
             
