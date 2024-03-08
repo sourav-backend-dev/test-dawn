@@ -70,3 +70,12 @@ Now, WP Rocket is out of safe mode and you can use it we were fixed the errors.
 some css breakdown  issue which was occured by wp rocket are following screenshot 
 Header removed in blog page but it is exists in editor  https://prnt.sc/QjAJ4UZduNfX
 and logo and the slider is working properly for now 
+
+
+Thrive responded about the logo slider
+You can use the Image Gallery element and its galley type 'Carousel' to have a slider like under the 'featured in' section.
+To learn more, please refer to these links:
+• https://help.thrivethemes.com/en/articles/4867493-how-to-use-the-image-gallery-element
+• https://help.thrivethemes.com/en/articles/5126221-using-the-image-gallery-carousel-options
+
+
