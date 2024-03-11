@@ -79,3 +79,215 @@ To learn more, please refer to these links:
 • https://help.thrivethemes.com/en/articles/5126221-using-the-image-gallery-carousel-options
 
 
+I hope you are well. We need your help again on a small issue. We have created two new pages that are not online yet - 
+1) SCIU Mace Race and 
+2) SCIU Mace Explorer. 
+They both have an FAQ section and it needs to be optimized. Currently both FAQs - English and German - are shown on each page.
+[5:58 PM] Mace Race webpage
+The German page should show the FAQs in German language (see FAQs "SCIU Mace deutsch") and the English page should show the FAQs in English language (see FAQs "SCIU Mace englisch").
+German: http://sciu-bikes.com/mace-race-gravel-bike
+English: https://www.sciu-bikes.com/en/mace-race-gravel-bike
+
+<style>
+
+[lang="en"] .WncCi p {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 6px 0;
+}
+footer .is-button-wide {
+    color: rgb(0 0 0) !important;
+}
+footer span.user-free-text {
+    color: #000 !important;
+}
+body a#widget-view-cart-button {
+    color: #000 !important;
+}
+.cart-content .is-button-wide, footer .is-button-wide {
+    color: #000;
+}
+.H1AvN.fggS-.cell pre {
+    color: #000;
+}
+span.user-free-text {
+    color: #000 !important;
+}
+[lang="de"] section#comp-lcubzurr {
+    display: none;
+}
+
+/* -----sciu-aspen-1------*/
+
+[lang="de"] section#comp-lcubzurr {
+ display: none;
+}
+[lang="en"] section#comp-lcubzurj1 {
+    display: none;
+}
+/* -----end sciu-aspen-1------*/
+/*-----service page-----*/
+[lang="de"] section#comp-kyh7xw0l{
+    display: none;
+}
+[lang="en"] section#comp-ky3100lz  {
+    display: none;
+}
+/*-----end service page-----*/
+
+/*-----sciu-juniper-----*/
+[lang="de"] section#comp-lcucjw2r
+{
+	display: none;
+}
+[lang="en"] section#comp-lcucjw2k  {
+    display: none;
+}
+
+/*-----end sciu-juniper-----*/
+
+ul#slideIn-parent li span {
+    text-transform: uppercase;
+}
+section._3GNyR .fggS-.cell .fggS-.cell:first-child  label {
+    text-transform: uppercase;
+}
+section._3GNyR .fggS-.cell .fggS-.cell div#product-colors-title-4_5 {
+    text-transform: uppercase;
+}
+
+._2E_da {
+    
+    padding: 0 !important;
+}
+article._1t5Mn a {
+    opacity: 1 !important;
+}
+.EU1kn a {
+    opacity: 1 !important;
+    text-transform: uppercase;
+}
+section._2RbVQ pre._28cEs {
+    color: #000;
+}
+div#product-colors-title-5_6 {
+    text-transform: uppercase;
+}
+div#product-colors-title-5_6 {
+    text-transform: uppercase;
+    letter-spacing: -1px !important;
+    font-size: 16px !important;
+}
+._1ZOt-.fggS-.cell span._3N3nl {
+    text-transform: uppercase;
+    letter-spacing: -1px !important;
+    font-size: 16px !important;
+}
+.TPAMultiSection_ii8l6294 ._2uERl input[type="number"] {
+    text-align: center;
+    border: 1px solid #000000;
+    color: #000;
+}
+body .TPAMultiSection_ii8l6294 .ColorOption2205205031__colorOption .ColorPickerbase3335576630__item .ColorPickerItem460183168__radioOuter {
+    width: 37px;
+    height: 36px;
+    border-radius: 50%;
+}
+.alignment-left .q-title {
+    padding-left: 0 !important;
+}
+div#accordion a.accordion-toggle span {
+    padding: 0;
+}
+
+section#comp-kxfxxghc div#comp-kxfxyrmm {
+    margin: 50px 0 100px 0;
+}
+section#comp-kxfy18fg div#comp-kxfy18gw1 {
+    margin: 100px 0 80px 0;
+}
+
+h2.Text3414440739__root.Text3414440739---typography-11-runningText.Text3414440739---priority-7-primary.s8gg2._149OH.InfoSectionTitle3095652555__root {
+    font-size: 27px !important;
+    line-height: 43px;
+    margin-bottom: 30px;
+    color: #7d7061;
+}
+@media (min-width:768px) {
+
+._2-GPA.fggS-.cell td {
+    color: #000;
+    border-left: 0;
+    border-right: 0;
+}
+div#comp-kxhgl8zc button._3omZ_ {
+    left: -68px;
+}
+
+._2-GPA.fggS-.cell td:first-child {
+    width: 30%;
+}
+div#bgLayers_comp-kxfsw6zs {
+    padding-bottom: 94px;
+}
+section#comp-kxfsw6xs {
+    padding-bottom: 93px;
+}
+section#comp-kxfy18fg {
+    margin-top: 45px;
+}
+
+}
+@media (max-width:767px) {
+section#comp-kxfxxghc div#comp-kxfxyrmm {
+    margin: 0;
+}
+section#comp-kxfy18fg div#comp-kxfy18gw1 {
+    margin:0;
+}
+.alignment-left .q-title {
+    padding-left: 0 !important;
+}
+.WncCi table td:first-child {
+    border-bottom: 0 !important;
+	 padding-bottom: 0;
+}
+.WncCi table td {
+    width: 100% !important;
+    display: block;
+}
+.WncCi table td:last-child {
+    border-top: 0;
+    padding-top: 0;
+}
+}
+
+#comp-lcucggxp2 #comp-lcucggxt1 {
+    margin: 50px 0 100px 0 ;
+}
+#comp-lcucggxw #comp-lcucggxx2 {
+    margin: 100px 0 80px 0 ;
+}
+section#comp-lcucggxw {
+    margin-bottom: 67px;
+    margin-top: 30px;
+}
+
+@media(min-width:768px)
+{
+section#comp-lcucggxw {
+   padding-bottom: 93px;
+}	
+}
+#comp-lcucjw0d span.wixui-rich-text__text {
+    text-transform: capitalize;
+}
+
+[lang="de"] section#columnStrip35{
+    display:none;
+}
+[lang="eu"] section#columnStrip34{
+    display:none;
+}
+</style>
+
