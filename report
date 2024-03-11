@@ -213,31 +213,7 @@ h2.Text3414440739__root.Text3414440739---typography-11-runningText.Text341444073
     margin-bottom: 30px;
     color: #7d7061;
 }
-@media (min-width:768px) {
 
-._2-GPA.fggS-.cell td {
-    color: #000;
-    border-left: 0;
-    border-right: 0;
-}
-div#comp-kxhgl8zc button._3omZ_ {
-    left: -68px;
-}
-
-._2-GPA.fggS-.cell td:first-child {
-    width: 30%;
-}
-div#bgLayers_comp-kxfsw6zs {
-    padding-bottom: 94px;
-}
-section#comp-kxfsw6xs {
-    padding-bottom: 93px;
-}
-section#comp-kxfy18fg {
-    margin-top: 45px;
-}
-
-}
 @media (max-width:767px) {
 section#comp-kxfxxghc div#comp-kxfxyrmm {
     margin: 0;
