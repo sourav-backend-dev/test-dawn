@@ -2,3 +2,55 @@
 <label for="upload">Upload Your Logo</label>
 <input id="upload" type="file" name="properties[_upload]" class="product-form__input">
 </form>
+
+
+<script>
+
+   $('[data-add-to-cart]').on('click', function(e) {
+        var isFocusEnabled = $('body').hasClass('focus-enabled') ;
+        if (isFocusEnabled) {
+          return;
+        }
+        e.preventDefault();
+        var form = $(this).closest('form')
+        var hasFileInput = false
+        if (form.find('[type="file"]').length){
+          hasFileInput = true;
+        }
+        if(hasFileInput){
+          var formData = new FormData($('.shopify-product-form')[0]);
+          formData.append('upload_file', $('input[type=file]')[0].files[0]);
+          $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            data: formData,
+            error: addError,
+            success: addSuccess,
+            complete: updateHeaderTotal
+          });
+        }
+        else {
+          var form_serialized = form.serializeArray();
+          var form_object = {};
+          $.map(form_serialized, function(val, i){
+            form_object[val.name] = val.value;
+          });
+          ajaxAddItem(form_object);
+        }
+      });
+      var ajaxAddItem = function(data) {
+        $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          dataType: 'json',
+          data: data,
+          error: addError,
+          success: addSuccess,
+          complete: updateHeaderTotal
+        });
+      }
+  
+</script>
