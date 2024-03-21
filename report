@@ -1,0 +1,9 @@
+api one time key : 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
+1. fetch all products [GET REQUEST]: https://241bd1f41a9be5faf5fc4567b992c1da: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@woodluckshop.myshopify.com/admin/api/2024-01/products.json
+2. update product image api url[POST REQUEST] : https://241bd1f41a9be5faf5fc4567b992c1da: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@woodluckshop.myshopify.com/admin/api/2024-01/products/7914798940350/images.json ( add new image json in body )
+3. Delete an image [DELETE REQUEST]: https://241bd1f41a9be5faf5fc4567b992c1da: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@woodluckshop.myshopify.com/admin/api/2024-01/products/{PRODUCT_ID}.json
+3. Create a new Metafield using postman api [POST REQUEST] : https://241bd1f41a9be5faf5fc4567b992c1da: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@woodluckshop.myshopify.com/admin/api/2024-01/products/7914798940350/metafields.json ( add new metafield json in body )
+
+
+
+
