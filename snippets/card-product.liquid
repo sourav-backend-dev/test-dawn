@@ -200,6 +200,7 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+             {% render 'custom-cart-collection', product: card_product %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -208,6 +209,8 @@
           </div>
         </div>
         {%- if show_quick_add -%}
+
+          {% comment %}
           <div class="quick-add no-js-hidden">
             {%- liquid
               assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
@@ -303,6 +306,7 @@
               </product-form>
             {%- endif -%}
           </div>
+          {% endcomment %}
         {%- endif -%}
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
