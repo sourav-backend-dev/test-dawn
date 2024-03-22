@@ -1,0 +1,30 @@
+<div class="collection-cart">
+  {%  for variant in product.variants %}
+  <input type="hidden" name="varinantId" value="{{ variant.id }}"/>
+    {% endfor %}
+<button type="button" name="add" id="collection-cart-{{ product.id }}">Add to Cart</button>
+</div>
+
+<script>
+    $(document).on('click', '#collection-cart-{{product.id }}', function(){
+      let getvarintid $(this).parents('.collection-cart').find('#variantgetid').val();
+      alert(getvarintid);
+    });
+    let formobj{
+      quantity: 1,
+      id: getvarintid
+      };
+      $.ajax({
+        type: "POST",
+        url: "/cart/add.js",
+        cache: false,
+        data: formobj,
+        dataType: "json",
+        success: function(data) { I
+          console.log('success');
+        }
+        error: function(xhr, ajaxOption, thrownError) {
+          console.log("error");
+        }
+      });
+</script>
