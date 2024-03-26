@@ -1,0 +1,6 @@
+<div class="collection-cart">
+  {%  for variant in product.variants %}
+  <input type="hidden" name="varinantId" value="{{ variant.id }}"/>
+    {% endfor %}
+<button type="button" name="add" id="collection-cart-{{ product.id }}">Add to Cart</button>
+</div>
