@@ -1,0 +1,46 @@
+<h3>{{ section.settings.title }}</h3>
+<img src = {{ section.settings.img_id }} height="100%" width="100%"/>
+{% schema %}
+{
+  "name": "slider-test",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img_id",
+      "label": "Select Images"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Add Title Here"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "slides",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Images"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "slider-test",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
