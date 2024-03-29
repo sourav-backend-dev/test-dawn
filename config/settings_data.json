@@ -138,6 +138,14 @@
     "content_for_index": [
 
     ],
+    "blocks": {
+      "16862338970857564521": {
+        "type": "shopify:\/\/apps\/demo-app\/blocks\/star_rating\/94f6a9d1-2497-4585-a1c1-a1b1c41f641c",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
