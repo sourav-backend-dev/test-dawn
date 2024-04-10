@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+<link rel="stylesheet" href={{ 'slider-test-style.css' | asset_url }} />
+<script src={{ 'slider-test-js.js' | asset_url }} defer></script>
+
+  
+  <div id="arrow-left" class="arrow">&#8592</div>
+  <h2 class="text-center ">{{ section.settings.text }}</h2>6
+  {% for block in section.blocks %}  
+    {% if block.settings.image %}
+      <div class="slide container mx-5"> 
+        {{ block.settings.image | img_url: '1024x1024' | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+        <h3 class="text-center">{{ block.settings.footnote }}</h3>
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div id="arrow-right" class="arrow">&#8594</div>
+
+
+{% schema %}
+  {
+    "name": "slider",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Enter Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slides",
+        "name": "slides",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image Slider"
+          },
+          {
+            "type": "text",
+            "id": "footnote",
+            "label": "Add Foot Note"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider-Testing",
+        "blocks": [
+          {
+            "type": "slides"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
